@@ -1,0 +1,160 @@
+html {
+    font-size: 100%;
+	font-family: "Noto Sans JP", "Nunito Sans";
+}
+
+
+body {
+    font-family: "Noto Sans JP", "Nunito Sans";
+    font-size: 1.0em;
+}
+
+.navbar{
+	font-family: "Noto Sans JP", "Nunito Sans";
+	background-color: #78C2AD;
+	border-color: white;
+}
+
+
+/*focus時のカラー*/
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	color: white;
+	/* background-color: transparent; */
+	background-color: #55b298;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: white;
+    background-color: #55b298;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus{
+	background-color: #55b298;
+}
+
+/* ドロップダウン（サブセクション）の色の修正 */
+.dropdown-menu>li>a{
+	color: black;
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus{
+	color: white;
+	background-color: #F3969A;;
+}
+
+.dropdown-content {
+  box-shadow: none;
+}
+
+p,li,dl {
+	line-height:1.5;
+}
+
+table {
+	font-size: 1.0em;
+	line-height:1.6;
+}
+
+/* 見出しのフォント */
+h1, h2, h3, h4, h5, h6{
+	font-weight: 700;
+	font-family: "Noto Sans JP", "Nunito Sans";
+}
+h1{
+	font-size: 1.75em
+}
+h2{
+	font-size: 1.5em
+}
+h3{
+	font-size: 1.25em
+}
+h4{
+	font-size: 1.125em
+}
+h5{
+	font-size: 1em
+}
+
+/* リンクの色などの設定 */
+a{
+	color: #78C2AD;
+	background-color: transparent;
+}
+/* ポイント時のリンクの色 */
+a:hover, a:active, a:focus {
+  color: #4aa48a;
+  text-decoration: underline;
+}
+/* 箇条書きの設定 */
+ol{
+  counter-reset:number;
+  list-style-type: none!important;
+  padding: 0.3em 0.8em;
+  /* border: solid 2px #ffb107; */
+}
+ol li{
+  border-bottom: dashed 1px #78C2AD;;
+  position: relative;
+  padding: 0.5em 0.5em 0.5em 30px;
+  line-height: 1.5em;
+}
+ol li:before{
+  /* 以下数字をつける */
+  position: absolute;
+  counter-increment: number;
+  content: counter(number);
+  /*数字のデザイン変える*/
+  display:inline-block;
+  background: #78C2AD;
+  color: white;
+  font-family: "Noto Sans JP", "Nunito Sans",'Avenir','Arial Black','Arial',sans-serif;
+  font-weight:bold;
+  font-size: 15px;
+  border-radius: 50%;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align:center;
+  /*以下 上下中央寄せのため*/
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  	-webkit-transform: translateY(-50%);
+  	-o-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+}
+ol li:last-of-type{
+  border-bottom: none; /*最後のliの線だけ消す*/
+}
+
+
+/* ---------------------------------
+ *        Fix content elements
+ * --------------------------------- */
+/* .content
+    h1, h2, h3, h4, h5, h6
+        font-weight: 900
+        font-family: "Noto Sans JP", "Nunito Sans", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    h1
+        font-size: 1.75em
+    h2
+        font-size: 1.5em
+    h3
+        font-size: 1.25em
+    h4
+        font-size: 1.125em
+    h5
+        font-size: 1em
+    code, pre
+        font-size: 0.85em
+        font-family: family-mono
+    code
+        color: hsl(348, 100%, 61%)
+        background: transparent
+        padding: 0
+    blockquote
+        footer
+            strong + cite
+                margin-left: 0.5em */
