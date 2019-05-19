@@ -127,39 +127,35 @@
 <p>対角行列の定義はv1.0から変更点があるので以前のバージョンに慣れている場合は要注意．なお，その他の行列については<a href="https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/">Linear Algebra</a> を参照．</p>
 <!-- more -->
 
-<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">diagm</span><span class="p">(</span><span class="mi">0</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="o">:</span><span class="mi">3</span><span class="p">)</span> <span class="c"># 1:3 と [1,2,3] は同じ</span>
-<span class="mi">3</span><span class="n">×3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">1</span>  <span class="mi">0</span>  <span class="mi">0</span>
- <span class="mi">0</span>  <span class="mi">2</span>  <span class="mi">0</span>
- <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">3</span>
-</pre></div>
+<pre><code class="julia">julia&gt; diagm(0 =&gt; 1:3) # 1:3 と [1,2,3] は同じ
+3×3 Array{Int64,2}:
+ 1  0  0
+ 0  2  0
+ 0  0  3
+</code></pre>
 
+<pre><code class="julia">julia&gt; diagm(1 =&gt; [1,2,3])
+4×4 Array{Int64,2}:
+ 0  1  0  0
+ 0  0  2  0
+ 0  0  0  3
+ 0  0  0  0
+</code></pre>
 
-<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">diagm</span><span class="p">(</span><span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
-<span class="mi">4</span><span class="n">×4</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">0</span>  <span class="mi">0</span>
- <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">2</span>  <span class="mi">0</span>
- <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">3</span>
- <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">diagm</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
-<span class="mi">4</span><span class="n">×4</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>
- <span class="mi">1</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>
- <span class="mi">0</span>  <span class="mi">2</span>  <span class="mi">0</span>  <span class="mi">0</span>
- <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">3</span>  <span class="mi">0</span>
-</pre></div>
-
+<pre><code class="julia">julia&gt; diagm(-1 =&gt; [1,2,3])
+4×4 Array{Int64,2}:
+ 0  0  0  0
+ 1  0  0  0
+ 0  2  0  0
+ 0  0  3  0
+</code></pre>
 
 <p>差分行列：例えば1階，2階微分に対応する中心差分行列は次のようにすればよい．</p>
-<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">D1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">*</span><span class="n">diagm</span><span class="p">(</span><span class="mi">1</span> <span class="o">=&gt;</span> <span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span> <span class="o">=&gt;</span> <span class="o">-</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="c"># dx: 刻み幅, n: 行列のサイズ</span>
+<pre><code class="julia">julia&gt; D1 = 1/(2*dx)*diagm(1 =&gt; ones(n-1), -1 =&gt; -ones(n-1), n-1 =&gt; [-1], -n+1 =&gt; [1])
+# dx: 刻み幅, n: 行列のサイズ
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">D2</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">dx</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">diagm</span><span class="p">(</span><span class="mi">1</span> <span class="o">=&gt;</span> <span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="mi">0</span> <span class="o">=&gt;</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">),</span>  <span class="o">-</span><span class="mi">1</span> <span class="o">=&gt;</span> <span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-
+julia&gt; D2 = 1/(dx^2)*diagm(1 =&gt; ones(n-1), 0 =&gt; -2*ones(n),  -1 =&gt; ones(n-1), n-1 =&gt; [1], -n+1 =&gt; [1])
+</code></pre>
 
 <p>ただし，疎行列として保持するためには，<a href="https://docs.julialang.org/en/v1/stdlib/SparseArrays/index.html">Sparse Arrays</a> パッケージ読み込み，<code>diagm</code> のかわりに <code>spdiagm</code> を使う必要がある．</p></div>
         </div>

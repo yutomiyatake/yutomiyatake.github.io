@@ -125,15 +125,13 @@
 
 <h1 id="pdf">PDFの余白を小さくする</h1>
 <p>Matlabなどで図を描き，PDFで保存すると，想定外に余白が大きすぎることがあり，TeXで貼り付けるときに少々困ります．<!-- more --> そんなときは，ターミナルから</p>
-<div class="codehilite"><pre><span></span>pdfcrop test.pdf
-</pre></div>
-
+<pre><code class="bash">pdfcrop test.pdf
+</code></pre>
 
 <p>とすれば余白は最小化されます．なお，TeXをTeX Liveでインストールしていればpdfcropは標準でインストールされているはずです．</p>
 <p>このpdfcropですが，ghostscript関係でエラーが起こることがあります．これは，TeXのインストール時に同時にインストールされるghostscriptとは別にhomebrewなどでghostscriptをインストールした場合に発生するようです．そんなときはターミナルから</p>
-<div class="codehilite"><pre><span></span>brew link --overwrite ghostscript
-</pre></div>
-
+<pre><code class="bash">brew link --overwrite ghostscript
+</code></pre>
 
 <p>とすれば解決するようです．</p></div>
         </div>

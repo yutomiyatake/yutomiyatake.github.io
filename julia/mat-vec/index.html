@@ -125,69 +125,66 @@
 
 <h1 id="_1">行列ベクトル積</h1>
 <p>まず，行列 <script type="math/tex">A</script> を適当に定義して，疎行列に変換してみましょう．</p>
-<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">SparseArrays</span>
+<pre><code class="julia">julia&gt; using SparseArrays
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">5</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">3</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">4</span> <span class="mi">6</span><span class="p">]</span>
-<span class="mi">3</span><span class="n">×3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">5</span>
- <span class="mi">0</span>  <span class="mi">3</span>  <span class="mi">0</span>
- <span class="mi">0</span>  <span class="mi">4</span>  <span class="mi">6</span>
+julia&gt; A = [1 2 5; 0 3 0; 0 4 6]
+3×3 Array{Int64,2}:
+ 1  2  5
+ 0  3  0
+ 0  4  6
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">sparse</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="mi">3</span><span class="n">×3</span> <span class="kt">SparseMatrixCSC</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="kt">Int64</span><span class="p">}</span> <span class="n">with</span> <span class="mi">6</span> <span class="n">stored</span> <span class="n">entries</span><span class="o">:</span>
-  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="o">=</span>  <span class="mi">1</span>
-  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>  <span class="o">=</span>  <span class="mi">2</span>
-  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>  <span class="o">=</span>  <span class="mi">3</span>
-  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>  <span class="o">=</span>  <span class="mi">4</span>
-  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="o">=</span>  <span class="mi">5</span>
-  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="o">=</span>  <span class="mi">6</span>
-</pre></div>
-
+julia&gt; A = sparse(A)
+3×3 SparseMatrixCSC{Int64,Int64} with 6 stored entries:
+  [1, 1]  =  1
+  [1, 2]  =  2
+  [2, 2]  =  3
+  [3, 2]  =  4
+  [1, 3]  =  5
+  [3, 3]  =  6
+</code></pre>
 
 <p><a href="https://docs.julialang.org/en/v1/stdlib/SparseArrays/index.html">マニュアル</a>によれば，圧縮列格納方式 (CSC) が採用されています．</p>
-<div class="codehilite"><pre><span></span><span class="n">struct</span> <span class="kt">SparseMatrixCSC</span><span class="p">{</span><span class="n">Tv</span><span class="p">,</span><span class="n">Ti</span><span class="o">&lt;:</span><span class="kt">Integer</span><span class="p">}</span> <span class="o">&lt;:</span> <span class="kt">AbstractSparseMatrix</span><span class="p">{</span><span class="n">Tv</span><span class="p">,</span><span class="n">Ti</span><span class="p">}</span>
-    <span class="n">m</span><span class="o">::</span><span class="kt">Int</span>                  <span class="c"># Number of rows</span>
-    <span class="n">n</span><span class="o">::</span><span class="kt">Int</span>                  <span class="c"># Number of columns</span>
-    <span class="n">colptr</span><span class="o">::</span><span class="kt">Vector</span><span class="p">{</span><span class="n">Ti</span><span class="p">}</span>      <span class="c"># Column i is in colptr[i]:(colptr[i+1]-1)</span>
-    <span class="n">rowval</span><span class="o">::</span><span class="kt">Vector</span><span class="p">{</span><span class="n">Ti</span><span class="p">}</span>      <span class="c"># Row indices of stored values</span>
-    <span class="n">nzval</span><span class="o">::</span><span class="kt">Vector</span><span class="p">{</span><span class="n">Tv</span><span class="p">}</span>       <span class="c"># Stored values, typically nonzeros</span>
-<span class="k">end</span>
-</pre></div>
-
+<pre><code class="julia">struct SparseMatrixCSC{Tv,Ti&lt;:Integer} &lt;: AbstractSparseMatrix{Tv,Ti}
+    m::Int                  # Number of rows
+    n::Int                  # Number of columns
+    colptr::Vector{Ti}      # Column i is in colptr[i]:(colptr[i+1]-1)
+    rowval::Vector{Ti}      # Row indices of stored values
+    nzval::Vector{Tv}       # Stored values, typically nonzeros
+end
+</code></pre>
 
 <p>上で定義した行列に対しては，それぞれ以下のようになっています．</p>
-<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">A</span><span class="o">.</span><span class="n">m</span>
-<span class="mi">3</span>
+<pre><code class="julia">julia&gt; A.m
+3
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">A</span><span class="o">.</span><span class="n">n</span>
-<span class="mi">3</span>
+julia&gt; A.n
+3
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">A</span><span class="o">.</span><span class="n">colptr</span>
-<span class="mi">4</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">1</span>
- <span class="mi">2</span>
- <span class="mi">5</span>
- <span class="mi">7</span>
+julia&gt; A.colptr
+4-element Array{Int64,1}:
+ 1
+ 2
+ 5
+ 7
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">A</span><span class="o">.</span><span class="n">rowval</span>
-<span class="mi">6</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">1</span>
- <span class="mi">1</span>
- <span class="mi">2</span>
- <span class="mi">3</span>
- <span class="mi">1</span>
- <span class="mi">3</span>
+julia&gt; A.rowval
+6-element Array{Int64,1}:
+ 1
+ 1
+ 2
+ 3
+ 1
+ 3
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">A</span><span class="o">.</span><span class="n">nzval</span>
-<span class="mi">6</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">1</span>
- <span class="mi">2</span>
- <span class="mi">3</span>
- <span class="mi">4</span>
- <span class="mi">5</span>
- <span class="mi">6</span>
-</pre></div>
-
+julia&gt; A.nzval
+6-element Array{Int64,1}:
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+</code></pre>
 
 <p>さて，行列ベクトル積 <script type="math/tex">y=Ax</script> を計算するためには，定義の通り，</p>
 <p>
@@ -199,50 +196,48 @@
 <li>行列の要素は行ではなく列を基準に格納されている</li>
 </ul>
 <p>ため，少し工夫する必要があります．例えば，次のように書くのがよいでしょう．</p>
-<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">n</span><span class="p">);</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">n</span><span class="p">);</span>
-<span class="k">for</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">A</span><span class="o">.</span><span class="n">n</span>
+<pre><code class="julia">x = ones(A.n);
+y = zeros(A.n);
+for col = 1 : A.n
 
-  <span class="n">idx</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">colptr</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+  idx = A.colptr[col]
 
-  <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">:</span> <span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">colptr</span><span class="p">[</span><span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">y</span><span class="p">[</span><span class="n">A</span><span class="o">.</span><span class="n">rowval</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">A</span><span class="o">.</span><span class="n">nzval</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</pre></div>
-
+  for i = idx : (A.colptr[col + 1] - 1)
+    y[A.rowval[i]] += A.nzval[i] * x[col]
+  end
+end
+</code></pre>
 
 <p>3重対角行列でテストしてみます．</p>
-<div class="codehilite"><pre><span></span><span class="k">using</span> <span class="n">SparseArrays</span>
-<span class="k">using</span> <span class="n">LinearAlgebra</span> <span class="c">#Tridiagonalを使うために必要</span>
+<pre><code class="julia">using SparseArrays
+using LinearAlgebra #Tridiagonalを使うために必要
 
-<span class="k">function</span> <span class="n">main</span><span class="p">()</span>
+function main()
 
-<span class="k">function</span> <span class="n">matvec</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">n</span><span class="p">);</span>
-    <span class="k">for</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">A</span><span class="o">.</span><span class="n">n</span>
+function matvec(A,x)
+    y = zeros(A.n);
+    for col = 1 : A.n
 
-        <span class="n">idx</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">colptr</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+        idx = A.colptr[col]
 
-        <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">:</span> <span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">colptr</span><span class="p">[</span><span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="n">y</span><span class="p">[</span><span class="n">A</span><span class="o">.</span><span class="n">rowval</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">A</span><span class="o">.</span><span class="n">nzval</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
-        <span class="k">end</span>
-    <span class="k">end</span>
-    <span class="k">return</span> <span class="n">y</span>
-<span class="k">end</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">400000</span><span class="p">;</span> <span class="c">#行列サイズ</span>
-<span class="n">A</span> <span class="o">=</span> <span class="kt">Tridiagonal</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="o">-</span><span class="mi">2</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span> <span class="c">#三重対角行列</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">sparse</span><span class="p">(</span><span class="n">A</span><span class="p">);</span> <span class="c">#疎行列に</span>
-<span class="c"># あるいは最初から</span>
-<span class="c"># A = spdiagm(1=&gt;ones(n-1),0=&gt;-2*ones(n),-1=&gt;ones(n-1))</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-<span class="nd">@time</span> <span class="n">matvec</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">x</span><span class="p">);</span> <span class="c">#時間測定</span>
+        for i = idx : (A.colptr[col + 1] - 1)
+            y[A.rowval[i]] += A.nzval[i] * x[col]
+        end
+    end
+    return y
+end
+n = 400000; #行列サイズ
+A = Tridiagonal(ones(n-1),-2ones(n),ones(n-1)); #三重対角行列
+A = sparse(A); #疎行列に
+# あるいは最初から
+# A = spdiagm(1=&gt;ones(n-1),0=&gt;-2*ones(n),-1=&gt;ones(n-1))
+x = ones(n);
+@time matvec(A,x); #時間測定
 
-<span class="k">end</span>
+end
 
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
-
+main()
+</code></pre>
 
 <p>計算時間は行列サイズ <script type="math/tex">n</script> にほぼ比例するはずです（行列サイズが2倍になれば計算時間も約2倍）．</p></div>
         </div>

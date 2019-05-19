@@ -128,51 +128,48 @@
 <!-- more -->
 
 <p>まず，値渡しの例：</p>
-<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="mi">1</span>
+<pre><code class="julia">julia&gt; a = 1
+1
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-<span class="mi">1</span>
+julia&gt; b = a
+1
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">+=</span><span class="mi">2</span>
-<span class="mi">3</span>
+julia&gt; b +=2
+3
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span>
-<span class="mi">1</span>
-</pre></div>
-
+julia&gt; a
+1
+</code></pre>
 
 <p>要するに，bの値は変わってもaの値は変わらない．</p>
 <p>次に参照渡しの例：</p>
-<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
-<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">1</span>
- <span class="mi">2</span>
+<pre><code class="julia">julia&gt; a = [1,2]
+2-element Array{Int64,1}:
+ 1
+ 2
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">1</span>
- <span class="mi">2</span>
+julia&gt; b = a
+2-element Array{Int64,1}:
+ 1
+ 2
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span>
- <span class="mi">2</span>
+julia&gt; b[1]=2
+ 2
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">b</span>
-<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">2</span>
- <span class="mi">2</span>
+julia&gt; b
+2-element Array{Int64,1}:
+ 2
+ 2
 
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span>
-<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">2</span>
- <span class="mi">2</span>
-</pre></div>
-
+julia&gt; a
+2-element Array{Int64,1}:
+ 2
+ 2
+</code></pre>
 
 <p>この場合，参照渡しとなりaの値も変更されます．これを避けたければ例えば</p>
-<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="o">:</span><span class="p">]</span>
-</pre></div>
-
+<pre><code class="julia">julia&gt; b = a[:]
+</code></pre>
 
 <p>のようにすればよい．</p></div>
         </div>
