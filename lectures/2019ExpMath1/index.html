@@ -125,20 +125,24 @@
 <h1 id="1-2019">実験数学1 (2019年度)</h1>
 <p><strong>注意</strong>：講義の諸情報は 大阪大学CLE に掲載するので，毎週確認すること．特に，講義前にスライドやサンプルプログラムをuploadします．</p>
 <p><strong>注意</strong>：<strong>教育用計算機</strong>上でプログラミングをする際，エディタは メモ帳 ではなく Notepad++ を使うのが良いかもしれません．少なくとも，プログラムに色が付きますし，文字化けはしないようです．もちろん，好みのエディタを使っても全く問題ありません．<br />Desktopに置かれたファイルはログオフ時に消去されるため，プログラムはDesktopのDocumentsというフォルダに置いて作業すると良いでしょう．<br />例えばDocumentsの中にExpMath1というフォルダを作り，その中にa1-1.cを置いたとき，cygwinでのフォルダの移動操作は次のとおりです． </p>
-<pre><code class="bash">$ cd Z:ExpMath1/
-</code></pre>
+<div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> Z:ExpMath1/
+</pre></div>
+
 
 <p>さらにフォルダを細かく整理している場合，例えばExpMath1の中にa1というフォルダがある場合は，</p>
-<pre><code class="bash">$ cd a1
-</code></pre>
+<div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> a1
+</pre></div>
+
 
 <p>とします．フォルダの中身を確認する場合は</p>
-<pre><code class="bash">$ ls
-</code></pre>
+<div class="codehilite"><pre><span></span>$ ls
+</pre></div>
+
 
 <p>一つ上の階層に戻りたいときは</p>
-<pre><code class="bash">$ cd ..
-</code></pre>
+<div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ..
+</pre></div>
+
 
 <p>とします．</p>
 <h2 id="2">2回目の授業までに行っておくこと</h2>
@@ -162,57 +166,66 @@
 </ul>
 <p>エディタを立ち上げて，以下のプログラムを書き，適当な名前（例えば「hello.c」）をつけて保存．</p>
 <p>注意：拡張子は「txt」などではなく「c」とすること</p>
-<pre><code class="c">#include &lt;stdio.h&gt;
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
-int main()
-{
-   printf(&quot;Hello World!\n&quot;);
-   return 0;
-}
-</code></pre>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 
 <h4 id="windows">コンパイル および 実行（Windowsの場合）</h4>
 <p>仮に，hello.c が Documents の ExpMath1 というフォルダの中にあるとする（教育用計算機の場合）．</p>
 <p><strong>Cygwinを起動し，cdコマンドで作業ディレクトリを移動</strong></p>
-<pre><code class="bash">$ cd Z:ExpMath1/
-</code></pre>
+<div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> Z:ExpMath1/
+</pre></div>
+
 
 <p><strong>gccコマンドで，hello.cをコンパイル</strong></p>
-<pre><code class="bash">$ gcc hello.c
-</code></pre>
+<div class="codehilite"><pre><span></span>$ gcc hello.c
+</pre></div>
+
 
 <p>コンパイルが成功すると，実行ファイル「a.exe」が作成される．lsコマンドで確認してみると</p>
-<pre><code class="bash">$ ls
+<div class="codehilite"><pre><span></span>$ ls
 a.exe hello.c
-</code></pre>
+</pre></div>
+
 
 <p>と２つのファイルが表示される（同じフォルダに他のファイルがあれば，それらも全て表示される）．</p>
 <p><strong>プログラムを実行</strong></p>
-<pre><code class="bash">$ ./a
+<div class="codehilite"><pre><span></span>$ ./a
 Hello World!
-</code></pre>
+</pre></div>
+
 
 <p>「Hello World!」が表示されれば成功です．</p>
 <h4 id="mac">コンパイル および 実行（Macの場合）</h4>
 <p>仮に，hello.c が Desktop の ExpMath1 というフォルダの中にあるとする．</p>
 <p><strong>ターミナルを起動し，cdコマンドで作業ディレクトリを異動</strong></p>
-<pre><code class="bash">$ cd ~/Desktop/ExpMath1
-</code></pre>
+<div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~/Desktop/ExpMath1
+</pre></div>
+
 
 <p><strong>gccコマンドで，hello.cをコンパイル</strong></p>
-<pre><code class="bash">$ gcc hello.c
-</code></pre>
+<div class="codehilite"><pre><span></span>$ gcc hello.c
+</pre></div>
+
 
 <p>コンパイルが成功すると，実行ファイル「a.out」が作成される．lsコマンドで確認してみると</p>
-<pre><code class="bash">$ ls
+<div class="codehilite"><pre><span></span>$ ls
 a.out hello.c
-</code></pre>
+</pre></div>
+
 
 <p>と二つのファイルが表示される（同じフォルダに他のファイルがあれば，それらも全て表示される）．</p>
 <p><strong>プログラムを実行</strong></p>
-<pre><code class="bash">$ ./a.out
+<div class="codehilite"><pre><span></span>$ ./a.out
 Hello World!
-</code></pre>
+</pre></div>
+
 
 <p>「Hello World!」が表示されれば成功です．</p>
 <h3 id="2-gnuplot">2. gnuplotを使えるようにする</h3>
@@ -220,26 +233,31 @@ Hello World!
 <h4 id="windows_1">Windowsの場合</h4>
 <p><a href="http://www.gnuplot.info/">gnuplotのウェブページ</a> からgnuplotをダウンロードし，インストールする（cygwinをfullでインストールしていれば，その中にgnuplotも含まれているらしいけれど，（windowsのPCを持っていないため）自分では確認できていません）．</p>
 <p>インストールできたら，\( \sin(x) \) のグラフなどを描いてみるとよいでしょう．</p>
-<pre><code class="bash">$ plot sin(x)
-</code></pre>
+<div class="codehilite"><pre><span></span>$ plot sin<span class="o">(</span>x<span class="o">)</span>
+</pre></div>
+
 
 <h4 id="mac_1">Macの場合</h4>
 <p>パッケージマネージャーとして <a href="https://brew.sh/index_ja">homebrew</a> を使っている場合（パッケージマネージャー（他にも <a href="https://www.macports.org/">Macports</a> や <a href="http://www.finkproject.org/index.php?phpLang=ja">Fink</a> などがあります）は便利なので，使っていない人は導入しましょう）</p>
-<pre><code class="bash">$ brew install gnuplot
-</code></pre>
+<div class="codehilite"><pre><span></span>$ brew install gnuplot
+</pre></div>
+
 
 <p>でインストールできます． ただし，これだと図を描いたときに表示ウィンドウが開かなかったり色々不便なので，<a href="https://sourceforge.net/projects/aquaterm/">AquaTerm</a> や <a href="https://www.xquartz.org/">XQuarts</a> などをインストールしたうえで，</p>
-<pre><code class="bash">$ brew install gnuplot --with-aquaterm
-</code></pre>
+<div class="codehilite"><pre><span></span>$ brew install gnuplot --with-aquaterm
+</pre></div>
+
 
 <p>や</p>
-<pre><code class="bash">$ brew install gnuplot --with-x11
-</code></pre>
+<div class="codehilite"><pre><span></span>$ brew install gnuplot --with-x11
+</pre></div>
+
 
 <p>というふうにインストールすると便利です．</p>
 <p>インストールできたら，\( \sin(x) \) のグラフなどを描いてみるとよいでしょう．</p>
-<pre><code class="bash">$ plot sin(x)
-</code></pre>
+<div class="codehilite"><pre><span></span>$ plot sin<span class="o">(</span>x<span class="o">)</span>
+</pre></div>
+
 
 <h3 id="3-latex">3. LaTeXを使えるようにする</h3>
 <p>（これは必須ではありませんが）多くの数学者は Word ではなく LaTeX を使って論文を書いています．授業のレポートなどで少しずつ慣れていくとよいと思います．</p>

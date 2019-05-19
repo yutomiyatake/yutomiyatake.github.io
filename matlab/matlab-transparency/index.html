@@ -126,11 +126,11 @@
 <!-- more -->
 
 <p>そんなとき，背景が透明な図を描ければよいのですが，matlabの場合は次のように実現可能です．</p>
-<pre><code class="matlab">set(gcf, 'Color', 'none'); % figureの背景を透明に設定
-set(gca, 'Color', 'none'); % axisの背景を透明に設定
-set(gcf, 'InvertHardCopy', 'off'); % figureの背景を白でコピーする設定を外す
-saveas(gcf, 'test.pdf');
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="n">set</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;none&#39;</span><span class="p">);</span> <span class="c">% figureの背景を透明に設定</span>
+<span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;none&#39;</span><span class="p">);</span> <span class="c">% axisの背景を透明に設定</span>
+<span class="n">set</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span> <span class="s">&#39;InvertHardCopy&#39;</span><span class="p">,</span> <span class="s">&#39;off&#39;</span><span class="p">);</span> <span class="c">% figureの背景を白でコピーする設定を外す</span>
+<span class="n">saveas</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span> <span class="s">&#39;test.pdf&#39;</span><span class="p">);</span>
+</pre></div></div>
         </div>
 
         <footer class="col-md-12">
