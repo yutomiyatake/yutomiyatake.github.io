@@ -231,6 +231,8 @@
 <span class="n">n</span> <span class="o">=</span> <span class="mi">400000</span><span class="p">;</span> <span class="c">#行列サイズ</span>
 <span class="n">A</span> <span class="o">=</span> <span class="kt">Tridiagonal</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="o">-</span><span class="mi">2</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span> <span class="c">#三重対角行列</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">sparse</span><span class="p">(</span><span class="n">A</span><span class="p">);</span> <span class="c">#疎行列に</span>
+<span class="c"># あるいは最初から</span>
+<span class="c"># A = spdiagm(1=&gt;ones(n-1),0=&gt;-2*ones(n),-1=&gt;ones(n-1))</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
 <span class="nd">@time</span> <span class="n">matvec</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">x</span><span class="p">);</span> <span class="c">#時間測定</span>
 
