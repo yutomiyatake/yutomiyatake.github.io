@@ -164,10 +164,10 @@
 </ul>
 <h3 id="_4">計算機環境の例</h3>
 <ul>
-<li><a href="https://jp.mathworks.com/products/matlab.html?.mathworks.com">MATLAB</a>：プロの数値解析学者もよく使っている数値計算専用言語（ソフトウェア）．様々な数値計算手法がすでに実装されており，あまり苦労せず直感的にプログラムを書ける．ただし，有料（学割あり）．また，非常に基本的な数値計算を除いて，多くの数値計算手法を利用するにはツールボックスが必要（有料）．教育用計算機ではほとんどのツールボックスは使えない．また，非常に簡単にプログラミングできる反面，メモリと速度の両面で大規模問題には向かない．</li>
-<li><a href="https://www.gnu.org/software/octave/">Octave</a>：無料の数値計算専用言語．MATLABとほぼ互換であり，MATLABではツールボックスが必要だがOctaveでは標準で実装されている数値計算手法も多い．Webや書籍などで情報もある程度充実している．<a href="https://octave.org/doc/interpreter/">公式の解説文書</a>も大いに勉強になる．同様の無料の言語に<a href="https://www.scilab.org/">Scilab</a>があるが，個人的な印象ではOctaveの方がMATLABとの互換性が高い．なお，一般に，OctaveやScilabはMATLABよりも速度は遅い．</li>
-<li>Python：一般のプログラミング言語．数値計算にはnumpyが必要．C言語やFortranと比べると，MATLABに近く，直感的にプログラムを書ける．いまや，機械学習方面では主力．</li>
-<li><a href="https://julialang.org/">Julia</a>：比較的新しい数値計算専用言語．MATLABに近く，直感的にプログラムを書けるだけでなく，計算速度はC言語やFortranに匹敵する．グラフィックスの整備がまだ十分ではない印象があるが，ここ数年でユーザーも大きく伸びている．この講義では基本的にJuliaのサンプルプログラムを提供する．なお，MATLAB，Python, Juliaはよく似た感覚でプログラムを書けるが，細かい違いも少なくない．<a href="https://cheatsheets.quantecon.org/">MATLAB–Python–Julia cheatsheet</a> には違いがよくまとまっている． <br />MATLABのツールボックスと同様に，様々な数値計算手法やグラフィックスを使うためには必要なパッケージをインストールする必要がある．<br />降籏先生による昨年度の本講義（応用数理学９）はJuliaを用いて数値計算を学ぶ内容でした．降籏先生の講義の<a href="http://www.cas.cmc.osaka-u.ac.jp/~paoon/Lectures/2019-7Semester-AppliedMath9/">webページ</a>も参考になります．</li>
+<li><a href="https://jp.mathworks.com/products/matlab.html?.mathworks.com">MATLAB</a>：プロの数値解析学者もよく使っている数値計算専用言語（ソフトウェア）．様々な数値計算手法がすでに実装されており，あまり苦労せず直感的にプログラムを書ける．ただし，有料（学割あり）．また，非常に基本的な数値計算を除いて，多くの数値計算手法を利用するにはツールボックスが必要（有料）．MATLABは教育用計算機で利用できるが，ほとんどのツールボックスは使えない．非常に簡単にプログラミングできる反面，メモリと速度の両面で大規模問題には向かない．</li>
+<li><a href="https://www.gnu.org/software/octave/">Octave</a>：無料の数値計算専用言語．MATLABとほぼ互換であり，MATLABではツールボックスが必要だがOctaveでは標準で実装されている数値計算手法も多い．Webや書籍などで情報もある程度充実している．<a href="https://octave.org/doc/interpreter/">公式の解説文書</a>も大いに勉強になる．同様の無料の言語に<a href="https://www.scilab.org/">Scilab</a>があるが，個人的な印象ではOctaveの方がMATLABとの互換性が高い．なお，速度に関してOctaveやScilabはMATLABよりも遅い（ことが多い）．</li>
+<li>Python：一般のプログラミング言語．数値計算にはnumpyが必要．C言語やFortranと比べると，MATLABに近く，直感的にプログラムを書ける．いまや，機械学習方面では主力だが，（回避策もいくつか知られているが）速度の面ではMATLABと同様の問題がある．</li>
+<li><a href="https://julialang.org/">Julia</a>：比較的新しい数値計算専用言語．MATLABに近く，直感的にプログラムを書けるだけでなく，計算速度はC言語やFortranに匹敵する．グラフィックスの整備がまだ十分ではない印象があるが，ここ数年でユーザー数も大きく伸びている．この講義では基本的にJuliaのサンプルプログラムを提供する．なお，MATLAB，Python, Juliaはよく似た感覚でプログラムを書けるが，細かい違いも少なくない．<a href="https://cheatsheets.quantecon.org/">MATLAB–Python–Julia cheatsheet</a> には違いがよくまとまっている． <br />MATLABのツールボックスと同様に，様々な数値計算手法やグラフィックスを使うためには必要なパッケージをインストールする必要がある．<br />降籏先生による昨年度の本講義（応用数理学９）はJuliaを用いて数値計算を学ぶ内容でした．降籏先生の講義の<a href="http://www.cas.cmc.osaka-u.ac.jp/~paoon/Lectures/2019-7Semester-AppliedMath9/">webページ</a>も参考になります．</li>
 <li>C言語，Fortran：コンパイル型のプログラミング言語．上述の言語に比べて長い歴史がある．一方で，上述の言語に比べて初学者が習得するためのコストは大きくなる傾向がある．しかしながら，スーパーコンピュータなどを使った最先端の大規模計算では現代でも主力の言語．</li>
 </ul>
 <h3 id="_5">行列の例</h3>
@@ -176,9 +176,9 @@
 <li><a href="https://jp.mathworks.com/help/matlab/ref/gallery.html">MATLABのテスト行列</a>：MATLABを使う場合は，いくつかのテスト行列が準備されている．これらを保存して，JuliaやPythonで呼び出すことも可能．</li>
 </ul>
 <h3 id="juliatips">JuliaのTips</h3>
-<p>宮武のwebページにもいくつかの<a href="../../julia">備忘録</a>があります．</p>
+<p>宮武のwebページにもいくつかの<a href="../../julia">備忘録</a>があります．特に参照渡しについては注意が必要．</p>
 <h4 id="_6">パッケージのインストール・使い方</h4>
-<p>例えばPlotsというパッケージのインストールは</p>
+<p>例えばグラフを描くパッケージの一つであるPlotsをインストールするためには</p>
 <pre><code class="julia">(v1.3) pkg&gt; add Plots
 </code></pre>
 
