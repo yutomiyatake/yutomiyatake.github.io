@@ -119,15 +119,23 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#1-2020">実験数学1 (2020年度)</a></li>
-            <li><a href="#2">2回目の授業までに行っておくこと</a></li>
+            <li><a href="#1">1. 自分のパソコンから情報教育端末のソフトウェアを利用する場合</a></li>
+            <li><a href="#2-c">2. C言語の環境を構築する</a></li>
+            <li><a href="#3-hello-world">3. Hello World!をコンパイル/実行してみる</a></li>
+            <li><a href="#4-julia-octave">4. Julia, Octaveをインストール</a></li>
+            <li><a href="#5-gnuplot">5. gnuplotを使えるようにする</a></li>
+            <li><a href="#6-latex">6. LaTeXを使えるようにする</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="1-2020">実験数学1 (2020年度)</h1>
-<p><strong>注意</strong>：講義の諸情報は 大阪大学CLE に掲載するので，毎週確認すること．特に，講義前にスライドやサンプルプログラムをuploadします．</p>
-<p><strong>注意</strong>：<strong>教育用計算機</strong> を利用する際には下記のようにいろいろな制約があります．この講義では教育用計算機で行えることしか扱いませんが，各自の計算機を用いた実習も推奨します（自宅での演習だけでなく，この講義にラップトップPCを持ち込んでも構いません）．</p>
-<p><strong>教育用計算機</strong>上でプログラミングをする場合，エディタは メモ帳 ではなく Notepad++ を使うのが良いかもしれません．少なくとも，プログラムに色が付きますし，文字化けはしないようです．もちろん，好みのエディタを使っても全く問題ありません．<br />Desktopに置かれたファイルはログオフ時に消去されるため，プログラムはDesktopのDocumentsというフォルダに置いて作業すると良いでしょう．<br />例えばDocumentsの中にExpMath1というフォルダを作り，その中にa1-1.cを置いたとき，cygwinでのフォルダの移動操作は次のとおりです． </p>
+<p><strong>注意</strong>：講義の諸情報は 大阪大学CLE に掲載するので，毎週確認してください．</p>
+<p><strong>注意</strong>：この講義の前半ではC言語を扱い，後半ではJuliaまたはOctaveを扱います．</p>
+<p><strong>注意</strong>：<strong>教育用計算機</strong>を利用して講義を行う予定でしたが，しばらくの間，オンラインで講義を行う可能性が高いので，自宅のラップトップなどでプログラミングを行える環境を整えることを強く推奨します．</p>
+<h3 id="1">1. 自分のパソコンから情報教育端末のソフトウェアを利用する場合</h3>
+<p>サイバーメディアセンターのウェブページに<a href="https://www.cmc.osaka-u.ac.jp/edu/document/byod.pdf">利用方法の説明</a>が書かれています．「キャンパスクラウドエージェント」と「VMWare Horizon View Client」のインストール・利用方法が説明されていますが，必須なのは後者です（項目2, 4）．キャンパスクラウドエージェントを（エラーなどで）インストールできなくても問題ありません．</p>
+<p>なお，Desktopに置かれたファイルはログオフ時に消去されるため，教育用計算機を利用する場合，プログラムはDesktopのDocumentsというフォルダに置いて作業すると良いでしょう．<br />例えばDocumentsの中にExpMath1というフォルダを作り，その中にa1-1.cを置いたとき，cygwinでのフォルダの移動操作は次のとおりです． </p>
 <pre><code class="bash">$ cd Z:ExpMath1/
 </code></pre>
 
@@ -144,26 +152,30 @@
 </code></pre>
 
 <p>とします．</p>
-<h2 id="2">2回目の授業までに行っておくこと</h2>
-<p>大学のPCでははじめから「C言語のプログラムのコンパイル/実行」ができる環境や，データを「グラフで出力する」環境が整っていますが，復習やレポートをする際には個人のPCでも同様の環境が整っていると便利だと思います．以下，環境を構築する方法の一例を紹介します（もちろん，すでに個人のPCでも環境が整っている人は，以下を行う必要はありません）．</p>
-<p><strong>注意</strong>：PCの性能や通信環境にもよりますが，全部を行うには <strong>数時間</strong> かかりますので注意してください．</p>
-<h3 id="0-c">0. C言語の環境を準備する</h3>
-<p>大学のPCではこの項目の作業は不要です（個人のPCで環境が整っていない人向けです）．</p>
-<p>Windows：大学のPCと同じような環境を整えたい場合，<a href="https://www.cygwin.com/">Cygwin</a> をインストール．</p>
-<p>Mac: App Store から Xcode をインストール．</p>
-<h3 id="1-hello-world">1. Hello World!をコンパイル/実行してみる</h3>
-<p>大学のアカウント and/or 個人のPCに「ExpMath1」といった名前のフォルダを作成する．</p>
+<p>ただし，この利用方法の場合</p>
+<ul>
+<li>接続が必ずしも安定しないかもしれない（また一回の利用時間に制限があります）</li>
+<li>使えるエディタが限定される（メモ帳よりはNotepad++がおすすめです）</li>
+<li>Juliaで使えないパッケージがある</li>
+</ul>
+<p>といった理由から，自分のパソコンに環境構築することを推奨します．</p>
+<h3 id="2-c">2. C言語の環境を構築する</h3>
+<p>Windows：大学のPCと同じような環境を整えたい場合，<a href="https://www.cygwin.com/">Cygwin</a> をインストール．gccというパッケージを忘れずにインストールすること．インストール後，Cygwinを立ち上げて gcc -v としてエラーがでなければOKです．</p>
+<p>Mac: App Store から Xcode をインストール．インストール後，ターミナルを立ち上げて gcc -v としてエラーがでなければOKです．homebrewなどからgccをインストールしてもよいです．</p>
+<p>homebrewについて補足：パッケージマネージャーとして <a href="https://brew.sh/index_ja">homebrew</a> （パッケージマネージャー（他にも <a href="https://www.macports.org/">Macports</a> や <a href="http://www.finkproject.org/index.php?phpLang=ja">Fink</a> などがあります）は便利なので，使っていない人は導入するとよいでしょう．</p>
+<h3 id="3-hello-world">3. Hello World!をコンパイル/実行してみる</h3>
+<p>大学のアカウント and/or 個人のPCに「ExpMath1」といった名前のフォルダを作成します．</p>
 <ul>
 <li>Dropboxなどで同期させておくと便利</li>
 <li>フォルダ名やファイル名にはなるべく日本語は避ける</li>
 </ul>
-<p>適当なエディタをダウンロード</p>
+<p>適当なエディタをダウンロードします</p>
 <ul>
 <li>「メモ帳」は色々と不便</li>
 <li>初心者であれば「Sublime Text」や「Atom」などがおすすめ</li>
 <li>色々試してみながら，使いやすいものを見つけていけばよい</li>
 </ul>
-<p>エディタを立ち上げて，以下のプログラムを書き，適当な名前（例えば「hello.c」）をつけて保存．</p>
+<p>エディタを立ち上げて，以下のプログラムを書き，適当な名前（例えば「hello.c」）をつけて保存します．</p>
 <p>注意：拡張子は「txt」などではなく「c」とすること</p>
 <pre><code class="c">#include &lt;stdio.h&gt;
 
@@ -175,7 +187,7 @@ int main()
 </code></pre>
 
 <h4 id="windows">コンパイル および 実行（Windowsの場合）</h4>
-<p>仮に，hello.c が Documents の ExpMath1 というフォルダの中にあるとする（教育用計算機の場合）．</p>
+<p>仮に，hello.c が Documents の ExpMath1 というフォルダの中にあるとします（教育用計算機の場合）．</p>
 <p><strong>Cygwinを起動し，cdコマンドで作業ディレクトリを移動</strong></p>
 <pre><code class="bash">$ cd Z:ExpMath1/
 </code></pre>
@@ -184,12 +196,12 @@ int main()
 <pre><code class="bash">$ gcc hello.c
 </code></pre>
 
-<p>コンパイルが成功すると，実行ファイル「a.exe」が作成される．lsコマンドで確認してみると</p>
+<p>コンパイルが成功すると，実行ファイル「a.exe」が作成されるので，lsコマンドで確認してください．</p>
 <pre><code class="bash">$ ls
 a.exe hello.c
 </code></pre>
 
-<p>と２つのファイルが表示される（同じフォルダに他のファイルがあれば，それらも全て表示される）．</p>
+<p>このように２つのファイルが表示されればOKです（同じフォルダに他のファイルがあれば，それらも全て表示されます）．</p>
 <p><strong>プログラムを実行</strong></p>
 <pre><code class="bash">$ ./a
 Hello World!
@@ -197,7 +209,7 @@ Hello World!
 
 <p>「Hello World!」が表示されれば成功です．</p>
 <h4 id="mac">コンパイル および 実行（Macの場合）</h4>
-<p>仮に，hello.c が Desktop の ExpMath1 というフォルダの中にあるとする．</p>
+<p>仮に，hello.c が Desktop の ExpMath1 というフォルダの中にあるとします．</p>
 <p><strong>ターミナルを起動し，cdコマンドで作業ディレクトリを異動</strong></p>
 <pre><code class="bash">$ cd ~/Desktop/ExpMath1
 </code></pre>
@@ -206,28 +218,35 @@ Hello World!
 <pre><code class="bash">$ gcc hello.c
 </code></pre>
 
-<p>コンパイルが成功すると，実行ファイル「a.out」が作成される．lsコマンドで確認してみると</p>
+<p>コンパイルが成功すると，実行ファイル「a.out」が作成されます．lsコマンドで確認してみると</p>
 <pre><code class="bash">$ ls
 a.out hello.c
 </code></pre>
 
-<p>と二つのファイルが表示される（同じフォルダに他のファイルがあれば，それらも全て表示される）．</p>
+<p>と二つのファイルが表示されるはずです（同じフォルダに他のファイルがあれば，それらも全て表示されます）．</p>
 <p><strong>プログラムを実行</strong></p>
 <pre><code class="bash">$ ./a.out
 Hello World!
 </code></pre>
 
 <p>「Hello World!」が表示されれば成功です．</p>
-<h3 id="2-gnuplot">2. gnuplotを使えるようにする</h3>
+<h3 id="4-julia-octave">4. Julia, Octaveをインストール</h3>
+<p>Juliaの<a href="https://julialang.org/">ウェブページ</a>からDownloadへと進み，それぞれの環境にあったものをインストールします．Macの場合は，</p>
+<pre><code class="bash">$ brew cask install julia
+</code></pre>
+
+<p>のようにインストールすることもできます．</p>
+<p>GNU Octaveの<a href="https://www.gnu.org/software/octave/">ウェブページ</a>からDownloadと進み，それぞれの環境にあったものをインストールします．</p>
+<h3 id="5-gnuplot">5. gnuplotを使えるようにする</h3>
 <p>gnuplotは2次元や3次元のグラフを生成するためのソフトウェアです．</p>
+<p><strong>注意</strong>：JuliaやOctaveではグラフを描くことができますが，C言語ではそれができません．この講義の後半ではJuliaまたはOctaveを扱いますが，C言語を使い続けても問題ありません．ただし，その場合はグラフを描くためには別のソフトウェアが必要で，例えばgnuplotを使うのがよいでしょう．（講義の内容にあわせてJuliaあるいはOctaveを扱いたい学生は，必ずしもインストールする必要はありません）</p>
 <h4 id="windows_1">Windowsの場合</h4>
-<p><a href="http://www.gnuplot.info/">gnuplotのウェブページ</a> からgnuplotをダウンロードし，インストールする（cygwinをfullでインストールしていれば，その中にgnuplotも含まれているらしいけれど，（windowsのPCを持っていないため）自分では確認できていません）．</p>
+<p><a href="http://www.gnuplot.info/">gnuplotのウェブページ</a> からgnuplotをダウンロードし，インストールします（cygwinをfullでインストールしていれば，その中にgnuplotも含まれているらしいけれど，（windowsのPCを持っていないため）自分では確認できていません）．</p>
 <p>インストールできたら，\( \sin(x) \) のグラフなどを描いてみるとよいでしょう．</p>
 <pre><code class="bash">$ plot sin(x)
 </code></pre>
 
 <h4 id="mac_1">Macの場合</h4>
-<p>パッケージマネージャーとして <a href="https://brew.sh/index_ja">homebrew</a> を使っている場合（パッケージマネージャー（他にも <a href="https://www.macports.org/">Macports</a> や <a href="http://www.finkproject.org/index.php?phpLang=ja">Fink</a> などがあります）は便利なので，使っていない人は導入しましょう）</p>
 <pre><code class="bash">$ brew install gnuplot
 </code></pre>
 
@@ -244,7 +263,7 @@ Hello World!
 <pre><code class="bash">$ plot sin(x)
 </code></pre>
 
-<h3 id="3-latex">3. LaTeXを使えるようにする</h3>
+<h3 id="6-latex">6. LaTeXを使えるようにする</h3>
 <p>（これは必須ではありませんが）多くの数学者は Word ではなく LaTeX を使って論文を書いています．授業のレポートなどで少しずつ慣れていくとよいと思います．</p>
 <p>インストール方法については</p>
 <ul>
