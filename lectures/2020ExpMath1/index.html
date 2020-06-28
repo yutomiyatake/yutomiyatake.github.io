@@ -9,16 +9,21 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>実験数学1 (2020年度) - Yuto Miyatake</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <link href="//fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700,900" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,400i,600,600i,700,700i" rel="stylesheet">
         <link href="../../css/custom.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/Julia REPL.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/Julia.min.js"></script>
@@ -35,65 +40,73 @@
     </head>
 
     <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
-                <a class="navbar-brand" href="../..">Yuto Miyatake</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Yuto Miyatake</a>
+                </div>
 
                 <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="../../about/" class="nav-link">CV (経歴)</a>
+                            <li >
+                                <a href="../../about/">CV (経歴)</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Research (研究) <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research (研究) <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li>
-    <a href="../../publications/" class="dropdown-item">Publications</a>
+<li >
+    <a href="../../publications/">Publications</a>
 </li>
                                     
-<li>
-    <a href="../../talks/" class="dropdown-item">Talks</a>
+<li >
+    <a href="../../talks/">Talks</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
-                                <a href="../../links/" class="nav-link">Links</a>
+                            <li >
+                                <a href="../../links/">Links</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../" class="nav-link">講義情報</a>
+                            <li >
+                                <a href="../">講義情報</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../../events/" class="nav-link">Events</a>
+                            <li >
+                                <a href="../../events/">Events</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">メモ <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">メモ <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li>
-    <a href="../../julia/" class="dropdown-item">Julia</a>
+<li >
+    <a href="../../julia/">Julia</a>
 </li>
                                     
-<li>
-    <a href="../../latex/" class="dropdown-item">LaTeX</a>
+<li >
+    <a href="../../latex/">LaTeX</a>
 </li>
                                     
-<li>
-    <a href="../../matlab/" class="dropdown-item">Matlab</a>
+<li >
+    <a href="../../matlab/">Matlab</a>
 </li>
                                 </ul>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
@@ -103,26 +116,18 @@
         </div>
 
         <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
-
-    
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#1-2020" class="nav-link">実験数学1 (2020年度)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-        </ul>
-    </div>
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#1-2020">実験数学1 (2020年度)</a></li>
+            <li><a href="#1">1. 自分のパソコンから情報教育端末のソフトウェアを利用する場合</a></li>
+            <li><a href="#2-c">2. C言語の環境を構築する</a></li>
+            <li><a href="#3-hello-world">3. Hello World!をコンパイル/実行してみる</a></li>
+            <li><a href="#4-julia-octave">4. Julia, Octaveをインストール</a></li>
+            <li><a href="#5-gnuplot">5. gnuplotを使えるようにする</a></li>
+            <li><a href="#6-latex">6. LaTeXを使えるようにする</a></li>
+    </ul>
 </div></div>
-                    <div class="col-md-9" role="main">
+                <div class="col-md-9" role="main">
 
 <h1 id="1-2020">実験数学1 (2020年度)</h1>
 <p><strong>注意</strong>：講義の諸情報は 大阪大学CLE に掲載するので，毎週確認してください．</p>
@@ -267,7 +272,6 @@ Hello World!
 </ul>
 <p>などが参考になります．</p>
 <p>便利なエディタも <a href="https://texwiki.texjp.org/?TeX%E7%94%A8%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF">たくさん</a> あるので，いろいろ試してみて使いやすいものを見つければよいでしょう．</p></div>
-            </div>
         </div>
 
         <footer class="col-md-12">
@@ -283,21 +287,21 @@ Hello World!
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML" defer></script>
         <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
                 <p>
                     From here you can search these documents. Enter
                     your search terms below.
                 </p>
-                <form>
+                <form role="form">
                     <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
                 <div id="mkdocs-search-results"></div>
@@ -306,12 +310,12 @@ Hello World!
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">
