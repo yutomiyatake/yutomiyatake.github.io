@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Julia | Yuto Miyatake</title>
+    <link>https://yutomiyatake.github.io/tag/julia/</link>
+      <atom:link href="https://yutomiyatake.github.io/tag/julia/index.xml" rel="self" type="application/rss+xml" />
+    <description>Julia</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Yuto Miyatake</copyright><lastBuildDate>Mon, 03 Jan 2022 16:28:58 +0900</lastBuildDate>
+    <image>
+      <url>https://yutomiyatake.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Julia</title>
+      <link>https://yutomiyatake.github.io/tag/julia/</link>
+    </image>
+    
+    <item>
+      <title>JuliaでLU分解するときの注意点</title>
+      <link>https://yutomiyatake.github.io/post/lu-julia/</link>
+      <pubDate>Mon, 03 Jan 2022 16:28:58 +0900</pubDate>
+      <guid>https://yutomiyatake.github.io/post/lu-julia/</guid>
+      <description>&lt;p&gt;JuliaでLU分解を利用して連立一次方程式を数値計算するとき，枢軸選択 (pivoting) に注意する必要があります．みるべき情報は&lt;a href=&#34;https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/#LinearAlgebra.lu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ここ&lt;/a&gt;ですが，備忘録も兼ねてまとめておきます．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;julia&amp;gt; using LinearAlgebra
+
+julia&amp;gt; A = [0 0 2; 1 0 1 ; 2 -1 1]
+3×3 Array{Int64,2}:
+ 0   0  2
+ 1   0  1
+ 2  -1  1
+
+julia&amp;gt; L, U = lu(A) # 素直にLU分解
+LU{Float64,Array{Float64,2}}
+L factor:
+3×3 Array{Float64,2}:
+ 1.0  0.0  0.0
+ 0.5  1.0  0.0
+ 0.0  0.0  1.0
+U factor:
+3×3 Array{Float64,2}:
+ 2.0  -1.0  1.0
+ 0.0   0.5  0.5
+ 0.0   0.0  2.0
+
+julia&amp;gt; L*U
+3×3 Array{Float64,2}:
+ 2.0  -1.0  1.0
+ 1.0   0.0  1.0
+ 0.0   0.0  2.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;L*U&lt;/code&gt;が&lt;code&gt;A&lt;/code&gt;と一致しません．そもそも&lt;code&gt;A&lt;/code&gt;の (1,1) 成分が 0 ですから，通常のLU分解は初手から破綻してしまいます．では何が行われているかというと枢軸選択 (pivoting) が行われているわけです．要するに行の入れ替えが行われています．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;julia&amp;gt; L, U, p = lu(A)
+LU{Float64,Array{Float64,2}}
+L factor:
+3×3 Array{Float64,2}:
+ 1.0  0.0  0.0
+ 0.5  1.0  0.0
+ 0.0  0.0  1.0
+U factor:
+3×3 Array{Float64,2}:
+ 2.0  -1.0  1.0
+ 0.0   0.5  0.5
+ 0.0   0.0  2.0
+
+julia&amp;gt; p # 置換を表すベクトル
+3-element Array{Int64,1}:
+ 3
+ 2
+ 1
+
+julia&amp;gt; b = [4;3;5] # 連立一次方程式の右辺ベクトル
+3-element Array{Int64,1}:
+ 4
+ 3
+ 5
+
+julia&amp;gt; A\b #　連立一次方程式の解
+3-element Array{Float64,1}:
+  1.0
+ -1.0
+  2.0
+
+julia&amp;gt; x1 = U\(L\b) # pivotingを無視して計算すると...
+3-element Array{Float64,1}:
+  0.5
+ -0.5
+  2.5
+
+julia&amp;gt; x2 = U\(L\b[p]) # pivotingを考慮して計算するにはこのようにすればよい
+3-element Array{Float64,1}:
+  1.0
+ -1.0
+  2.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;置換を表す行列も簡単に取り出せます．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;julia&amp;gt; F = lu(A);
+
+julia&amp;gt; F.P
+3×3 Array{Float64,2}:
+ 0.0  0.0  1.0
+ 0.0  1.0  0.0
+ 1.0  0.0  0.0
+
+julia&amp;gt; (F.P)*A - L*U
+3×3 Array{Float64,2}:
+ 0.0  0.0  0.0
+ 0.0  0.0  0.0
+ 0.0  0.0  0.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;なお，枢軸選択を無視してLU分解することも可能です．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;julia&amp;gt; lu(A,Val(false)) # A は上の3x3行列
+ERROR: ZeroPivotException: factorization encountered one or more zero pivots. Consider switching to a pivoted LU factorization.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;怒られます．(1,1) 成分が 0 なのですから当然です．しかし，枢軸選択を無視してもLU分解が動く例もあります．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;julia&amp;gt; A = [1 1; 2 1] # この行列に対して
+2×2 Array{Int64,2}:
+ 1  1
+ 2  1
+
+julia&amp;gt; L,U　= lu(A) #　LU分解すると
+LU{Float64,Array{Float64,2}}
+L factor:
+2×2 Array{Float64,2}:
+ 1.0  0.0
+ 0.5  1.0
+U factor:
+2×2 Array{Float64,2}:
+ 2.0  1.0
+ 0.0  0.5
+
+julia&amp;gt; L*U # 枢軸選択が適用されますが
+2×2 Array{Float64,2}:
+ 2.0  1.0
+ 1.0  1.0
+
+julia&amp;gt; L,U = lu(A,Val(false)) # このようにすれば，枢軸選択は適用されません
+LU{Float64,Array{Float64,2}}
+L factor:
+2×2 Array{Float64,2}:
+ 1.0  0.0
+ 2.0  1.0
+U factor:
+2×2 Array{Float64,2}:
+ 1.0   1.0
+ 0.0  -1.0
+
+julia&amp;gt; L*U # 実際に L*U が A に一致します
+2×2 Array{Float64,2}:
+ 1.0  1.0
+ 2.0  1.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;あえて枢軸選択を行わないメリットはあまりないとは思いますが，例えば，matlabの素朴なLU分解と比較するときなどには &lt;code&gt;lu(A,Val(false))&lt;/code&gt; は役立つかもしれません．&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
