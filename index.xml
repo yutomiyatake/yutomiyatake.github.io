@@ -5,12 +5,27 @@
     <link>https://yutomiyatake.github.io/</link>
       <atom:link href="https://yutomiyatake.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Yuto Miyatake</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Yuto Miyatake</copyright><lastBuildDate>Tue, 01 Feb 2022 10:53:04 +0900</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Yuto Miyatake</copyright><lastBuildDate>Tue, 01 Feb 2022 23:04:32 +0900</lastBuildDate>
     <image>
       <url>https://yutomiyatake.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Yuto Miyatake</title>
       <link>https://yutomiyatake.github.io/</link>
     </image>
+    
+    <item>
+      <title>Matlabで描く図の背景の透明化</title>
+      <link>https://yutomiyatake.github.io/post/matlab-transparency/</link>
+      <pubDate>Tue, 01 Feb 2022 23:04:32 +0900</pubDate>
+      <guid>https://yutomiyatake.github.io/post/matlab-transparency/</guid>
+      <description>&lt;p&gt;Matlabで図を描いたとき，通常，図の背景は白です．論文を書くときなどはこれで困らないのですが，スライドに貼り付けると，背景が「真っ白」ではない場合，少し微妙な出来栄えになってしまいます．&lt;/p&gt;
+&lt;p&gt;そんなとき，背景が透明な図を描ければよいのですが，matlabの場合は次のように実現可能です．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-matlab&#34;&gt;set(gcf, &#39;Color&#39;, &#39;none&#39;); % figureの背景を透明に設定
+set(gca, &#39;Color&#39;, &#39;none&#39;); % axisの背景を透明に設定
+set(gcf, &#39;InvertHardCopy&#39;, &#39;off&#39;); % figureの背景を白でコピーする設定を外す
+saveas(gcf, &#39;test.pdf&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>PDFの余白を小さくする</title>
