@@ -5,12 +5,29 @@
     <link>https://yutomiyatake.github.io/post/</link>
       <atom:link href="https://yutomiyatake.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Yuto Miyatake</copyright><lastBuildDate>Mon, 03 Jan 2022 16:28:58 +0900</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Yuto Miyatake</copyright><lastBuildDate>Tue, 01 Feb 2022 10:53:04 +0900</lastBuildDate>
     <image>
       <url>https://yutomiyatake.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
       <link>https://yutomiyatake.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>PDFの余白を小さくする</title>
+      <link>https://yutomiyatake.github.io/post/pdfcrop/</link>
+      <pubDate>Tue, 01 Feb 2022 10:53:04 +0900</pubDate>
+      <guid>https://yutomiyatake.github.io/post/pdfcrop/</guid>
+      <description>&lt;p&gt;Matlabなどで図を描き，PDFで保存すると，想定外に余白が大きすぎることがあり，TeXで貼り付けるときに少々困ります．そんなときは，ターミナルから&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pdfcrop test.pdf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;とすれば余白は最小化されます．なお，TeXをTeX Liveでインストールしていればpdfcropは標準でインストールされているはずです．&lt;/p&gt;
+&lt;p&gt;（以下は何年も前の情報で，ここ数年，次のようなトラブルには遭遇していませんが，以前のwebページに載せていた情報をそのまま掲載します）&lt;/p&gt;
+&lt;p&gt;このpdfcropですが，ghostscript関係でエラーが起こることがあります．これは，TeXのインストール時に同時にインストールされるghostscriptとは別にhomebrewなどでghostscriptをインストールした場合に発生するようです．そんなときはターミナルから&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;brew link --overwrite ghostscript
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;とすれば解決するようです．&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>JuliaでLU分解するときの注意点</title>
