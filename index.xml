@@ -5,12 +5,133 @@
     <link>https://yutomiyatake.github.io/</link>
       <atom:link href="https://yutomiyatake.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Yuto Miyatake</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Yuto Miyatake</copyright><lastBuildDate>Tue, 01 Feb 2022 23:04:32 +0900</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Yuto Miyatake</copyright><lastBuildDate>Wed, 02 Feb 2022 09:13:33 +0900</lastBuildDate>
     <image>
       <url>https://yutomiyatake.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Yuto Miyatake</title>
       <link>https://yutomiyatake.github.io/</link>
     </image>
+    
+    <item>
+      <title>Juliaの行列ベクトル積について（疎行列編）</title>
+      <link>https://yutomiyatake.github.io/post/julia_mat_vec/</link>
+      <pubDate>Wed, 02 Feb 2022 09:13:33 +0900</pubDate>
+      <guid>https://yutomiyatake.github.io/post/julia_mat_vec/</guid>
+      <description>&lt;p&gt;科学技術計算では行列ベクトル積が頻繁に登場し，これを効率よく計算することはとても重要です．
+行列サイズ $n$ に対して計算量は $\mathrm{O}(n^2)$ ですが，行列は疎行列（ほとんどの要素が $0$）であることが多く，定義通りに計算すると $0$ を掛けたり足したりする無駄な演算が多く発生してしまいます．
+以下では疎行列とベクトルの積の計算について解説します．
+（もっとも，Juliaで行列ベクトル積 $A\boldsymbol{b}$ を計算するには &lt;code&gt;A*b&lt;/code&gt; と書けばよく，これは $A$ が疎行列の場合でも同様なので，疎行列のパッケージがあることさえ知っていれば実用上は十分なことが多いのですが，とはいえ，チューニングを行ったり，上三角部分など行列の一部とベクトルの積を計算したりしたいときには，疎行列とベクトルの積がどのように計算されているか理解しておくことが重要です．）&lt;/p&gt;
+&lt;p&gt;まず，行列 $A$ を適当に定義して，疎行列に変換してみましょう．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;julia&amp;gt; using SparseArrays
+
+julia&amp;gt; A = [1 2 5; 0 3 0; 0 4 6]
+3×3 Array{Int64,2}:
+ 1  2  5
+ 0  3  0
+ 0  4  6
+
+julia&amp;gt; A = sparse(A)
+3×3 SparseMatrixCSC{Int64,Int64} with 6 stored entries:
+  [1, 1]  =  1
+  [1, 2]  =  2
+  [2, 2]  =  3
+  [3, 2]  =  4
+  [1, 3]  =  5
+  [3, 3]  =  6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.julialang.org/en/v1/stdlib/SparseArrays/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;マニュアル&lt;/a&gt;によれば，圧縮列格納方式 (CSC) が採用されています．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;struct SparseMatrixCSC{Tv,Ti&amp;lt;:Integer} &amp;lt;: AbstractSparseMatrix{Tv,Ti}
+    m::Int                  # Number of rows
+    n::Int                  # Number of columns
+    colptr::Vector{Ti}      # Column i is in colptr[i]:(colptr[i+1]-1)
+    rowval::Vector{Ti}      # Row indices of stored values
+    nzval::Vector{Tv}       # Stored values, typically nonzeros
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上で定義した行列に対しては，それぞれ以下のようになっています．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;julia&amp;gt; A.m
+3
+
+julia&amp;gt; A.n
+3
+
+julia&amp;gt; A.colptr
+4-element Array{Int64,1}:
+ 1
+ 2
+ 5
+ 7
+
+julia&amp;gt; A.rowval
+6-element Array{Int64,1}:
+ 1
+ 1
+ 2
+ 3
+ 1
+ 3
+
+julia&amp;gt; A.nzval
+6-element Array{Int64,1}:
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;さて，行列ベクトル積 $y=Ax$ を計算するためには，定義の通り，&lt;/p&gt;
+&lt;p&gt;$$y_i = \sum_{j=1}^nA_{ij}x_j$$&lt;/p&gt;
+&lt;p&gt;をfor文で実装するのが自然ですが，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;疎行列の場合，$0$にアクセスするのは無駄&lt;/li&gt;
+&lt;li&gt;行列の要素は行ではなく列を基準に格納されている&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ため，少し工夫する必要があります．例えば，次のように書くのがよいでしょう．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;x = ones(A.n);
+y = zeros(A.n);
+for col = 1 : A.n
+
+  idx = A.colptr[col]
+
+  for i = idx : (A.colptr[col + 1] - 1)
+    y[A.rowval[i]] += A.nzval[i] * x[col]
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3重対角行列でテストしてみます．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;using SparseArrays
+using LinearAlgebra #Tridiagonalを使うために必要
+
+function main()
+
+function matvec(A,x)
+    y = zeros(A.n);
+    for col = 1 : A.n
+
+        idx = A.colptr[col]
+
+        for i = idx : (A.colptr[col + 1] - 1)
+            y[A.rowval[i]] += A.nzval[i] * x[col]
+        end
+    end
+    return y
+end
+n = 400000; #行列サイズ
+A = Tridiagonal(ones(n-1),-2ones(n),ones(n-1)); #三重対角行列
+A = sparse(A); #疎行列に
+# あるいは最初から
+# A = spdiagm(1=&amp;gt;ones(n-1),0=&amp;gt;-2*ones(n),-1=&amp;gt;ones(n-1))
+x = ones(n);
+@time matvec(A,x); #時間測定
+
+end
+
+main()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;計算時間は行列サイズ $n$ にほぼ比例するはずです（行列サイズが2倍になれば計算時間も約2倍）．&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Matlabで描く図の背景の透明化</title>
