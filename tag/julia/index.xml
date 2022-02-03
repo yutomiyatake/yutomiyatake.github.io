@@ -1,16 +1,65 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>julia | Yuto Miyatake</title>
+    <title>Julia | Yuto Miyatake</title>
     <link>https://yutomiyatake.github.io/tag/julia/</link>
       <atom:link href="https://yutomiyatake.github.io/tag/julia/index.xml" rel="self" type="application/rss+xml" />
-    <description>julia</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Yuto Miyatake</copyright><lastBuildDate>Wed, 02 Feb 2022 09:13:33 +0900</lastBuildDate>
+    <description>Julia</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Yuto Miyatake</copyright><lastBuildDate>Thu, 03 Feb 2022 17:18:22 +0900</lastBuildDate>
     <image>
       <url>https://yutomiyatake.github.io/media/icon_hubd8f7a0aa92a456ae2e6407ed541af7b_7730_512x512_fill_lanczos_center_3.png</url>
-      <title>julia</title>
+      <title>Julia</title>
       <link>https://yutomiyatake.github.io/tag/julia/</link>
     </image>
+    
+    <item>
+      <title>関数の定義：キーワード引数</title>
+      <link>https://yutomiyatake.github.io/post/julia_kwargs/</link>
+      <pubDate>Thu, 03 Feb 2022 17:18:22 +0900</pubDate>
+      <guid>https://yutomiyatake.github.io/post/julia_kwargs/</guid>
+      <description>&lt;p&gt;関数を定義する際，キーワード引数を利用すると便利なことがあります．例えば反復法の終了条件として閾値（例えば最大反復回数や許容誤差）を設定することはよくありますが，デフォルトの値を設定しつつも，関数を呼び出すときに自由に変更できると便利です．キーワード引数は，引数の指定を位置ではなく名前でおこないます．以下，Jiliaにおけるキーワード引数の基本的な使い方を説明します．&lt;/p&gt;
+&lt;p&gt;例えば，次の関数では &lt;code&gt;y&lt;/code&gt; の値としてデフォルトで &lt;code&gt;1&lt;/code&gt; が設定されていますが，関数を呼び出すときに，自由に変更することが可能です．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;julia&amp;gt; function f(x;y=1)
+       return x+y
+       end
+f (generic function with 1 method)
+    
+julia&amp;gt; f(2)
+3
+    
+julia&amp;gt; f(2,y=0.1)
+2.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;もちろん，型を指定することもできます．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;julia&amp;gt; function g(x;y::Int64=1)
+       return x+y
+       end
+g (generic function with 1 method)
+    
+julia&amp;gt; g(2,y=1)
+3
+    
+julia&amp;gt; g(2,y=0.1)
+ERROR: TypeError: in keyword argument y, expected Int64, got Float64
+Stacktrace:
+ [1] (::getfield(Main, Symbol(&amp;quot;#kw##g&amp;quot;)))(::NamedTuple{(:y,),Tuple{Float64}}, ::typeof(g), ::Int64) at ./none:0
+ [2] top-level scope at REPL[15]:1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;Int64&lt;/code&gt; は 64-bit signed integer type なので，このように小数を代入をしようとするとエラーが起きます．&lt;/p&gt;
+&lt;p&gt;また，キーワード引数が二つ以上ある場合，どの順番で指定しても問題ありません．&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;julia&amp;gt; function h(x;y=1,z=2)
+       return x*y+z
+       end
+h (generic function with 1 method)
+
+julia&amp;gt; h(1,z=3)
+4
+
+julia&amp;gt; h(1,z=3,y=2)
+5
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Juliaの行列ベクトル積について（疎行列編）</title>
