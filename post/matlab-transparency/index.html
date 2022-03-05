@@ -22,7 +22,11 @@
 
 
 
+
   
+
+
+
 
 
 
@@ -60,7 +64,9 @@
   
     
   
-  <meta name="description" content="Matlabで図を描いたとき，通常，図の背景は白です．論文を" />
+  <meta name="description" content="Matlabで図を描いたとき，通常，図の背景は白です．論文を書くときなどはこれで困らないのですが，スライドに貼り付けると，背景が「真っ白」ではない場合，少し微妙な出来栄えになってしまいます．
+そんなとき，背景が透明な図を描ければよいのですが，matlabの場合は次のように実現可能です．
+set(gcf, &#39;Color&#39;, &#39;none&#39;); % figureの背景を透明に設定 set(gca, &#39;Color&#39;, &#39;none&#39;); % axisの背景を透明に設定 set(gcf, &#39;InvertHardCopy&#39;, &#39;off&#39;); % figureの背景を白でコピーする設定を外す saveas(gcf, &#39;test." />
 
   
   <link rel="alternate" hreflang="en-us" href="https://yutomiyatake.github.io/post/matlab-transparency/" />
@@ -68,7 +74,7 @@
   
   
   
-    <meta name="theme-color" content="hsl(339, 90%, 68%)" />
+    <meta name="theme-color" content="#1565c0" />
   
 
   
@@ -108,8 +114,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'" disabled>
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
         
       
     
@@ -251,7 +257,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.68370f95792e125d7476b9809d973588.css" />
+  <link rel="stylesheet" href="/css/wowchemy.18a6177522dc0854e3decee686b15212.css" />
 
   
 
@@ -298,7 +304,9 @@
 
   
 
+
   
+
 
   
 
@@ -315,8 +323,8 @@
     <link rel="manifest" href="/manifest.webmanifest" />
   
 
-  <link rel="icon" type="image/png" href="/media/icon_hubd8f7a0aa92a456ae2e6407ed541af7b_7730_32x32_fill_lanczos_center_3.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd8f7a0aa92a456ae2e6407ed541af7b_7730_180x180_fill_lanczos_center_3.png" />
+  <link rel="icon" type="image/png" href="/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_180x180_fill_lanczos_center_3.png" />
 
   <link rel="canonical" href="https://yutomiyatake.github.io/post/matlab-transparency/" />
 
@@ -340,11 +348,16 @@
   
   <meta property="twitter:card" content="summary" />
   
+    <meta property="twitter:site" content="@wowchemy" />
+    <meta property="twitter:creator" content="@wowchemy" />
+  
   <meta property="og:site_name" content="Yuto Miyatake" />
   <meta property="og:url" content="https://yutomiyatake.github.io/post/matlab-transparency/" />
   <meta property="og:title" content="Matlabで描く図の背景の透明化 | Yuto Miyatake" />
-  <meta property="og:description" content="Matlabで図を描いたとき，通常，図の背景は白です．論文を" /><meta property="og:image" content="https://yutomiyatake.github.io/media/icon_hubd8f7a0aa92a456ae2e6407ed541af7b_7730_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://yutomiyatake.github.io/media/icon_hubd8f7a0aa92a456ae2e6407ed541af7b_7730_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  <meta property="og:description" content="Matlabで図を描いたとき，通常，図の背景は白です．論文を書くときなどはこれで困らないのですが，スライドに貼り付けると，背景が「真っ白」ではない場合，少し微妙な出来栄えになってしまいます．
+そんなとき，背景が透明な図を描ければよいのですが，matlabの場合は次のように実現可能です．
+set(gcf, &#39;Color&#39;, &#39;none&#39;); % figureの背景を透明に設定 set(gca, &#39;Color&#39;, &#39;none&#39;); % axisの背景を透明に設定 set(gcf, &#39;InvertHardCopy&#39;, &#39;off&#39;); % figureの背景を白でコピーする設定を外す saveas(gcf, &#39;test." /><meta property="og:image" content="https://yutomiyatake.github.io/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://yutomiyatake.github.io/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
@@ -393,10 +406,10 @@
     "name": "Yuto Miyatake",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://yutomiyatake.github.io/media/icon_hubd8f7a0aa92a456ae2e6407ed541af7b_7730_192x192_fill_lanczos_center_3.png"
+      "url": "https://yutomiyatake.github.io/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "Matlabで図を描いたとき，通常，図の背景は白です．論文を"
+  "description": "Matlabで図を描いたとき，通常，図の背景は白です．論文を書くときなどはこれで困らないのですが，スライドに貼り付けると，背景が「真っ白」ではない場合，少し微妙な出来栄えになってしまいます．\nそんなとき，背景が透明な図を描ければよいのですが，matlabの場合は次のように実現可能です．\nset(gcf, 'Color', 'none'); % figureの背景を透明に設定 set(gca, 'Color', 'none'); % axisの背景を透明に設定 set(gcf, 'InvertHardCopy', 'off'); % figureの背景を白でコピーする設定を外す saveas(gcf, 'test."
 }
 </script>
 
@@ -416,7 +429,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  dark " data-wc-page-id="ffb02f04500b56a878c4c48078e32d28" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="ffb02f04500b56a878c4c48078e32d28" >
 
   
   
@@ -427,7 +440,7 @@
   
   
   
-  <script src="/js/wowchemy-init.min.b6ac29faab89ee14db88f0bed7aa6622.js"></script>
+  <script src="/js/wowchemy-init.min.7ae0c9ee9f911b24fcf8185b088fc8ad.js"></script>
 
   
 
@@ -751,6 +764,7 @@
 
         
         
+        
         <li class="nav-item dropdown theme-dropdown">
           <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
             <i class="fas fa-moon" aria-hidden="true"></i>
@@ -782,6 +796,10 @@
   </div>
 
   <div class="page-body">
+    
+    
+    
+
     <article class="article">
 
   
@@ -839,8 +857,6 @@
   
   
   
-  
-  
 
   
   
@@ -876,8 +892,6 @@ saveas(gcf, 'test.pdf');
 
 
 
-
-
 <div class="article-tags">
   
   <a class="badge badge-light" href="/tag/matlab/">matlab</a>
@@ -885,25 +899,6 @@ saveas(gcf, 'test.pdf');
 </div>
 
 
-
-<div class="share-box">
-  <ul class="share">
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://twitter.com/intent/tweet?url=https://yutomiyatake.github.io/post/matlab-transparency/&amp;text=Matlab%e3%81%a7%e6%8f%8f%e3%81%8f%e5%9b%b3%e3%81%ae%e8%83%8c%e6%99%af%e3%81%ae%e9%80%8f%e6%98%8e%e5%8c%96" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-    
-  </ul>
-</div>
 
 
 
@@ -1053,11 +1048,6 @@ saveas(gcf, 'test.pdf');
 
 
 
-  
-  
-
-
-
 
 
   </div>
@@ -1079,15 +1069,47 @@ saveas(gcf, 'test.pdf');
   
 
   
-  <p class="powered-by">
+
+  
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
     © 2022 Yuto Miyatake
   </p>
   
 
-  
-  
-
-
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
 
 
 
@@ -1110,32 +1132,6 @@ saveas(gcf, 'test.pdf');
     </div>
     
   </div>
-
-  
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
       
 
@@ -1162,6 +1158,8 @@ saveas(gcf, 'test.pdf');
         
         
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
         
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/julia.min.js" crossorigin="anonymous"></script>
         
@@ -1229,7 +1227,7 @@ saveas(gcf, 'test.pdf');
 
     
     
-      <script src="/js/wowchemy-headroom.1cb9e2fc8399acee94eab837265b73bf.js" type="module"></script>
+      <script src="/js/wowchemy-headroom.79343bd00de25e04f03b6af2819f8643.js" type="module"></script>
     
     
     
@@ -1241,8 +1239,13 @@ saveas(gcf, 'test.pdf');
       
     
     
-    <script src="/en/js/wowchemy.min.247fd8f54253895301106e3006f53f38.js"></script>
+    <script src="/en/js/wowchemy.min.f41ee09ba84b78e6bdd68fadc655c33f.js"></script>
 
+    
+    
+    
+    
+    
     
 
 

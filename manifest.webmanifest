@@ -2,14 +2,14 @@
   "name": "Yuto Miyatake",
   "short_name": "Yuto Miyatake",
   "lang": "en-us",
-  "theme_color": "hsl(339, 90%, 68%)",
-  "background_color": "hsl(339, 90%, 68%)",
+  "theme_color": "#1565c0",
+  "background_color": "#1565c0",
   "icons": [{
-    "src": "/media/icon_hubd8f7a0aa92a456ae2e6407ed541af7b_7730_192x192_fill_lanczos_center_3.png",
+    "src": "/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_192x192_fill_lanczos_center_3.png",
     "sizes": "192x192",
     "type": "image/png"
     }, {
-    "src": "/media/icon_hubd8f7a0aa92a456ae2e6407ed541af7b_7730_512x512_fill_lanczos_center_3.png",
+    "src": "/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png",
     "sizes": "512x512",
     "type": "image/png"
      }],
