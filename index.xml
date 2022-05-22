@@ -2,16 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Yuto Miyatake</title>
-    <link>https://yutomiyatake.github.io/</link>
+    <link>https://yutomiyatake.github.io/index.xml</link>
       <atom:link href="https://yutomiyatake.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Yuto Miyatake</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 03 Feb 2022 17:18:22 +0900</lastBuildDate>
-    <image>
-      <url>https://yutomiyatake.github.io/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
-      <title>Yuto Miyatake</title>
-      <link>https://yutomiyatake.github.io/</link>
-    </image>
-    
     <item>
       <title>関数の定義：キーワード引数</title>
       <link>https://yutomiyatake.github.io/post/julia_kwargs/</link>

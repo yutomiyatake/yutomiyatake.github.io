@@ -2,8 +2,8 @@
   "name": "Yuto Miyatake",
   "short_name": "Yuto Miyatake",
   "lang": "en-us",
-  "theme_color": "#1565c0",
-  "background_color": "#1565c0",
+  "theme_color": "<no value>",
+  "background_color": "<no value>",
   "icons": [{
     "src": "/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_192x192_fill_lanczos_center_3.png",
     "sizes": "192x192",
