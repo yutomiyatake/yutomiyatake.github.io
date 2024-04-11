@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>latex | Yuto Miyatake</title>
-    <link>https://yutomiyatake.github.io/tag/latex/</link>
-      <atom:link href="https://yutomiyatake.github.io/tag/latex/index.xml" rel="self" type="application/rss+xml" />
-    <description>latex</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Feb 2022 10:53:04 +0900</lastBuildDate>
+    <title>Latex | Academic</title>
+    <link>https://example.com/tag/latex/</link>
+      <atom:link href="https://example.com/tag/latex/index.xml" rel="self" type="application/rss+xml" />
+    <description>Latex</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Feb 2022 10:53:04 +0900</lastBuildDate>
     <image>
-      <url>https://yutomiyatake.github.io/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
-      <title>latex</title>
-      <link>https://yutomiyatake.github.io/tag/latex/</link>
+      <url>https://example.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Latex</title>
+      <link>https://example.com/tag/latex/</link>
     </image>
     
     <item>
       <title>PDFの余白を小さくする</title>
-      <link>https://yutomiyatake.github.io/post/pdfcrop/</link>
+      <link>https://example.com/post/pdfcrop/</link>
       <pubDate>Tue, 01 Feb 2022 10:53:04 +0900</pubDate>
-      <guid>https://yutomiyatake.github.io/post/pdfcrop/</guid>
+      <guid>https://example.com/post/pdfcrop/</guid>
       <description>&lt;p&gt;Matlabなどで図を描き，PDFで保存すると，想定外に余白が大きすぎることがあり，TeXで貼り付けるときに少々困ります．そんなときは，ターミナルから&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pdfcrop test.pdf
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;とすれば余白は最小化されます．なお，TeXをTeX Liveでインストールしていればpdfcropは標準でインストールされているはずです．&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pdfcrop test.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とすれば余白は最小化されます．なお，TeXをTeX Liveでインストールしていればpdfcropは標準でインストールされているはずです．&lt;/p&gt;
 &lt;p&gt;（以下は何年も前の情報で，ここ数年，次のようなトラブルには遭遇していませんが，以前のwebページに載せていた情報をそのまま掲載します）&lt;/p&gt;
 &lt;p&gt;このpdfcropですが，ghostscript関係でエラーが起こることがあります．これは，TeXのインストール時に同時にインストールされるghostscriptとは別にhomebrewなどでghostscriptをインストールした場合に発生するようです．そんなときはターミナルから&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;brew link --overwrite ghostscript
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;とすれば解決するようです．&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew link --overwrite ghostscript
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とすれば解決するようです．&lt;/p&gt;
 </description>
     </item>
     

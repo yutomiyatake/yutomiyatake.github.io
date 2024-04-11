@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="en-us" >
+<!DOCTYPE html>
+<!-- This site was created with Hugo Blox. https://hugoblox.com -->
+<!-- Last Published: April 11, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -8,8 +10,22 @@
   
   
   
-    <meta name="generator" content="Wowchemy 5.4.0 for Hugo" />
+    <meta name="generator" content="Hugo Blox Builder 5.9.7" />
   
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
 
   
   
@@ -48,50 +64,20 @@
 
   
   
-  
-  
-  
-    
-    
-    
-  
-  
-
-  <meta name="author" content="Yuto Miyatake" />
 
   
-  
-  
-    
-  
-  <meta name="description" content="関数を定義する際，キーワード引数を利用すると便利なことがあります．例えば反復法の終了条件として閾値（例えば最大反復回数や許容誤差）を設定することはよくありますが，デフォルトの値を設定しつつも，関数を呼び出すときに自由に変更できると便利です．キーワード引数は，引数の指定を位置ではなく名前でおこないます．以下，Jiliaにおけるキーワード引数の基本的な使い方を説明します．
-例えば，次の関数では y の値としてデフォルトで 1 が設定されていますが，関数を呼び出すときに，自由に変更することが可能です．" />
-
-  
-  <link rel="alternate" hreflang="en-us" href="https://yutomiyatake.github.io/post/julia_kwargs/" />
-
-  
-  
-  
-    <meta name="theme-color" content="#1565c0" />
-  
-
-  
-  
-    
-    <script src="/js/mathjax-config.js"></script>
   
 
   
 
-  <link rel="stylesheet" href="/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/css/vendor-bundle.min.26c458e6907dc03073573976b7f4044e.css" media="print" onload="this.media='all'">
 
   
   
   
     
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
@@ -107,130 +93,101 @@
     
     
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
       
     
+      
+      
+
+      
+      
+
+      
     
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
       
       
         
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
-        
-      
-    
-
-    
-    
-    
-
-    
-
-    
-    
-      
       
 
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -256,9 +213,30 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.18a6177522dc0854e3decee686b15212.css" />
+  
+  <link rel="stylesheet" href="/css/wowchemy.f6689966c0a10712f95f034011917db0.css" />
 
   
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
 
 
 
@@ -301,72 +279,115 @@
 </script>
 
 
-  
-
-
-  
-
-
-  
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
   
 
-  
+
+
+
+
+
+  <meta name="author" content="Yuto Miyatake" />
+
+
+
+
 
   
-    <link rel="manifest" href="/manifest.webmanifest" />
+
+<meta name="description" content="関数を定義する際，キーワード引数を利用すると便利なことがあります．例えば反復法の終了条件として閾値（例えば最大反復回数や許容誤差）を設定することはよくありますが，デフォルトの値を設定しつつも，関数を呼び出すときに自由に変更できると便利です．キーワード引数は，引数の指定を位置ではなく名前でおこないます．以下，Jiliaにおけるキーワード引数の基本的な使い方を説明します．
+例えば，次の関数では y の値としてデフォルトで 1 が設定されていますが，関数を呼び出すときに，自由に変更することが可能です．
+julia&gt; function f(x;y=1) return x&#43;y end f (generic function with 1 method) julia&gt; f(2) 3 julia&gt; f(2,y=0.1) 2.1 もちろん，型を指定することもできます．
+julia&gt; function g(x;y::Int64=1) return x&#43;y end g (generic function with 1 method) julia&gt; g(2,y=1) 3 julia&gt; g(2,y=0." />
+
+
+
+<link rel="alternate" hreflang="en-us" href="https://example.com/post/julia_kwargs/" />
+<link rel="canonical" href="https://example.com/post/julia_kwargs/" />
+
+
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
   
 
-  <link rel="icon" type="image/png" href="/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_32x32_fill_lanczos_center_3.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://yutomiyatake.github.io/post/julia_kwargs/" />
 
-  
-  
-  
-  
-  
-  
-  
-  
-    
-    
-  
-  
+
+
+
+<meta property="twitter:card" content="summary" />
+
+  <meta property="twitter:site" content="@GetResearchDev" />
+  <meta property="twitter:creator" content="@GetResearchDev" />
+<meta property="twitter:image" content="https://example.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
+
+
 
   
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Academic" />
+<meta property="og:url" content="https://example.com/post/julia_kwargs/" />
+<meta property="og:title" content="関数の定義：キーワード引数 | Academic" />
+<meta property="og:description" content="関数を定義する際，キーワード引数を利用すると便利なことがあります．例えば反復法の終了条件として閾値（例えば最大反復回数や許容誤差）を設定することはよくありますが，デフォルトの値を設定しつつも，関数を呼び出すときに自由に変更できると便利です．キーワード引数は，引数の指定を位置ではなく名前でおこないます．以下，Jiliaにおけるキーワード引数の基本的な使い方を説明します．
+例えば，次の関数では y の値としてデフォルトで 1 が設定されていますが，関数を呼び出すときに，自由に変更することが可能です．
+julia&gt; function f(x;y=1) return x&#43;y end f (generic function with 1 method) julia&gt; f(2) 3 julia&gt; f(2,y=0.1) 2.1 もちろん，型を指定することもできます．
+julia&gt; function g(x;y::Int64=1) return x&#43;y end g (generic function with 1 method) julia&gt; g(2,y=1) 3 julia&gt; g(2,y=0." /><meta property="og:image" content="https://example.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+
   
-    
-    
+    <meta
+      property="article:published_time"
+      content="2022-02-03T17:18:22&#43;09:00"
+    />
   
-  <meta property="twitter:card" content="summary" />
   
-    <meta property="twitter:site" content="@wowchemy" />
-    <meta property="twitter:creator" content="@wowchemy" />
-  
-  <meta property="og:site_name" content="Yuto Miyatake" />
-  <meta property="og:url" content="https://yutomiyatake.github.io/post/julia_kwargs/" />
-  <meta property="og:title" content="関数の定義：キーワード引数 | Yuto Miyatake" />
-  <meta property="og:description" content="関数を定義する際，キーワード引数を利用すると便利なことがあります．例えば反復法の終了条件として閾値（例えば最大反復回数や許容誤差）を設定することはよくありますが，デフォルトの値を設定しつつも，関数を呼び出すときに自由に変更できると便利です．キーワード引数は，引数の指定を位置ではなく名前でおこないます．以下，Jiliaにおけるキーワード引数の基本的な使い方を説明します．
-例えば，次の関数では y の値としてデフォルトで 1 が設定されていますが，関数を呼び出すときに，自由に変更することが可能です．" /><meta property="og:image" content="https://yutomiyatake.github.io/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://yutomiyatake.github.io/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
-  
-    
-      <meta
-        property="article:published_time"
-        content="2022-02-03T17:18:22&#43;09:00"
-      />
-    
     <meta property="article:modified_time" content="2022-02-03T17:18:22&#43;09:00">
   
 
-  
+
+
+
 
 
     
@@ -387,7 +408,7 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://yutomiyatake.github.io/post/julia_kwargs/"
+    "@id": "https://example.com/post/julia_kwargs/"
   },
   "headline": "関数の定義：キーワード引数",
   
@@ -401,13 +422,13 @@
   
   "publisher": {
     "@type": "Organization",
-    "name": "Yuto Miyatake",
+    "name": "Academic",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://yutomiyatake.github.io/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_192x192_fill_lanczos_center_3.png"
+      "url": "https://example.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "関数を定義する際，キーワード引数を利用すると便利なことがあります．例えば反復法の終了条件として閾値（例えば最大反復回数や許容誤差）を設定することはよくありますが，デフォルトの値を設定しつつも，関数を呼び出すときに自由に変更できると便利です．キーワード引数は，引数の指定を位置ではなく名前でおこないます．以下，Jiliaにおけるキーワード引数の基本的な使い方を説明します．\n例えば，次の関数では y の値としてデフォルトで 1 が設定されていますが，関数を呼び出すときに，自由に変更することが可能です．"
+  "description": "関数を定義する際，キーワード引数を利用すると便利なことがあります．例えば反復法の終了条件として閾値（例えば最大反復回数や許容誤差）を設定することはよくありますが，デフォルトの値を設定しつつも，関数を呼び出すときに自由に変更できると便利です．キーワード引数は，引数の指定を位置ではなく名前でおこないます．以下，Jiliaにおけるキーワード引数の基本的な使い方を説明します．\n例えば，次の関数では y の値としてデフォルトで 1 が設定されていますが，関数を呼び出すときに，自由に変更することが可能です．\njulia\u0026gt; function f(x;y=1) return x+y end f (generic function with 1 method) julia\u0026gt; f(2) 3 julia\u0026gt; f(2,y=0.1) 2.1 もちろん，型を指定することもできます．\njulia\u0026gt; function g(x;y::Int64=1) return x+y end g (generic function with 1 method) julia\u0026gt; g(2,y=1) 3 julia\u0026gt; g(2,y=0."
 }
 </script>
 
@@ -415,15 +436,37 @@
 
   
 
+
+
+
+  
+  
+  
+
+  
   
 
   
 
 
+  
+  <title>関数の定義：キーワード引数 | Academic</title>
+
+  
+  
+  
+  
 
 
 
-  <title>関数の定義：キーワード引数 | Yuto Miyatake</title>
+
+
+
+
+
+
+
+
 </head>
 
 
@@ -438,7 +481,7 @@
   
   
   
-  <script src="/js/wowchemy-init.min.a4baef58ec6bfbcb5bb8a62d701da81c.js"></script>
+  <script src="/js/wowchemy-init.min.9e4214442a7711d35691acd58f6f6361.js"></script>
 
   
 
@@ -482,8 +525,12 @@
 
 
 
-  <div class="page-header">
-    
+  <div class="page-header header--fixed">
+  
+  
+  
+  
+  
 
 
 
@@ -496,13 +543,13 @@
 
 
 
-<header class="header--fixed">
+<header>
   <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
     <div class="container-xl">
 
       
       <div class="d-none d-lg-inline-flex">
-        <a class="navbar-brand" href="/">Yuto Miyatake</a>
+        <a class="navbar-brand" href="/">Academic</a>
       </div>
       
 
@@ -515,7 +562,7 @@
 
       
       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-        <a class="navbar-brand" href="/">Yuto Miyatake</a>
+        <a class="navbar-brand" href="/">Academic</a>
       </div>
       
 
@@ -755,6 +802,7 @@
 
         
         
+        
         <li class="nav-item">
           <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
         </li>
@@ -801,6 +849,7 @@
     <article class="article">
 
   
+
 
 
 
@@ -877,49 +926,47 @@
     <div class="article-style">
       <p>関数を定義する際，キーワード引数を利用すると便利なことがあります．例えば反復法の終了条件として閾値（例えば最大反復回数や許容誤差）を設定することはよくありますが，デフォルトの値を設定しつつも，関数を呼び出すときに自由に変更できると便利です．キーワード引数は，引数の指定を位置ではなく名前でおこないます．以下，Jiliaにおけるキーワード引数の基本的な使い方を説明します．</p>
 <p>例えば，次の関数では <code>y</code> の値としてデフォルトで <code>1</code> が設定されていますが，関数を呼び出すときに，自由に変更することが可能です．</p>
-<pre><code class="language-julia">julia&gt; function f(x;y=1)
-       return x+y
-       end
-f (generic function with 1 method)
-    
-julia&gt; f(2)
-3
-    
-julia&gt; f(2,y=0.1)
-2.1
-</code></pre>
-<p>もちろん，型を指定することもできます．</p>
-<pre><code class="language-julia">julia&gt; function g(x;y::Int64=1)
-       return x+y
-       end
-g (generic function with 1 method)
-    
-julia&gt; g(2,y=1)
-3
-    
-julia&gt; g(2,y=0.1)
-ERROR: TypeError: in keyword argument y, expected Int64, got Float64
-Stacktrace:
- [1] (::getfield(Main, Symbol(&quot;#kw##g&quot;)))(::NamedTuple{(:y,),Tuple{Float64}}, ::typeof(g), ::Int64) at ./none:0
- [2] top-level scope at REPL[15]:1
-</code></pre>
-<p><code>Int64</code> は 64-bit signed integer type なので，このように小数を代入をしようとするとエラーが起きます．</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">;</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">       <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+</span></span><span class="line"><span class="cl">       <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mf">2.1</span>
+</span></span></code></pre></div><p>もちろん，型を指定することもできます．</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">;</span><span class="n">y</span><span class="o">::</span><span class="kt">Int64</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">       <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+</span></span><span class="line"><span class="cl">       <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="n">g</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">julia</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">julia</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ERROR</span><span class="o">:</span> <span class="kt">TypeError</span><span class="o">:</span> <span class="k">in</span> <span class="n">keyword</span> <span class="n">argument</span> <span class="n">y</span><span class="p">,</span> <span class="n">expected</span> <span class="kt">Int64</span><span class="p">,</span> <span class="n">got</span> <span class="kt">Float64</span>
+</span></span><span class="line"><span class="cl"><span class="n">Stacktrace</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">(</span><span class="o">::</span><span class="n">getfield</span><span class="p">(</span><span class="n">Main</span><span class="p">,</span> <span class="kt">Symbol</span><span class="p">(</span><span class="s">&#34;#kw##g&#34;</span><span class="p">)))(</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">{(</span><span class="ss">:y</span><span class="p">,),</span><span class="kt">Tuple</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}},</span> <span class="o">::</span><span class="n">typeof</span><span class="p">(</span><span class="n">g</span><span class="p">),</span> <span class="o">::</span><span class="kt">Int64</span><span class="p">)</span> <span class="n">at</span> <span class="o">./</span><span class="n">none</span><span class="o">:</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span> <span class="n">at</span> <span class="n">REPL</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="o">:</span><span class="mi">1</span>
+</span></span></code></pre></div><p><code>Int64</code> は 64-bit signed integer type なので，このように小数を代入をしようとするとエラーが起きます．</p>
 <p>また，キーワード引数が二つ以上ある場合，どの順番で指定しても問題ありません．</p>
-<pre><code class="language-julia">julia&gt; function h(x;y=1,z=2)
-       return x*y+z
-       end
-h (generic function with 1 method)
-
-julia&gt; h(1,z=3)
-4
-
-julia&gt; h(1,z=3,y=2)
-5
-</code></pre>
-
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">h</span><span class="p">(</span><span class="n">x</span><span class="p">;</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">z</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">       <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="n">z</span>
+</span></span><span class="line"><span class="cl">       <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="n">h</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">julia</span><span class="o">&gt;</span> <span class="n">h</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">julia</span><span class="o">&gt;</span> <span class="n">h</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">5</span>
+</span></span></code></pre></div>
     </div>
 
     
+
 
 
 
@@ -931,6 +978,116 @@ julia&gt; h(1,z=3,y=2)
 </div>
 
 
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fexample.com%2Fpost%2Fjulia_kwargs%2F&amp;text=%E9%96%A2%E6%95%B0%E3%81%AE%E5%AE%9A%E7%BE%A9%EF%BC%9A%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E5%BC%95%E6%95%B0" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fexample.com%2Fpost%2Fjulia_kwargs%2F&amp;t=%E9%96%A2%E6%95%B0%E3%81%AE%E5%AE%9A%E7%BE%A9%EF%BC%9A%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E5%BC%95%E6%95%B0" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a href="mailto:?subject=%E9%96%A2%E6%95%B0%E3%81%AE%E5%AE%9A%E7%BE%A9%EF%BC%9A%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E5%BC%95%E6%95%B0&amp;body=https%3A%2F%2Fexample.com%2Fpost%2Fjulia_kwargs%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fexample.com%2Fpost%2Fjulia_kwargs%2F&amp;title=%E9%96%A2%E6%95%B0%E3%81%AE%E5%AE%9A%E7%BE%A9%EF%BC%9A%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E5%BC%95%E6%95%B0" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=%E9%96%A2%E6%95%B0%E3%81%AE%E5%AE%9A%E7%BE%A9%EF%BC%9A%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E5%BC%95%E6%95%B0%20https%3A%2F%2Fexample.com%2Fpost%2Fjulia_kwargs%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fexample.com%2Fpost%2Fjulia_kwargs%2F&amp;title=%E9%96%A2%E6%95%B0%E3%81%AE%E5%AE%9A%E7%BE%A9%EF%BC%9A%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E5%BC%95%E6%95%B0" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
 
 
 
@@ -957,11 +1114,11 @@ julia&gt; h(1,z=3,y=2)
   <div class="media author-card content-widget-hr">
     
       
-      <a href="https://yutomiyatake.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hud32dce2a057cb0f8ccd334a8b55765c5_304564_270x270_fill_q75_lanczos_center.jpg" alt="Yuto Miyatake"></a>
+      <a href="https://example.com/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hud32dce2a057cb0f8ccd334a8b55765c5_304564_270x270_fill_q75_lanczos_center.jpg" alt="Yuto Miyatake"></a>
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="https://yutomiyatake.github.io/">Yuto Miyatake</a></h5>
+      <h5 class="card-title"><a href="https://example.com/">Yuto Miyatake</a></h5>
       <h6 class="card-subtitle">Associate Professor</h6>
       <p class="card-text">Applied Mathematics, Numerical Analysis, Computational Uncertain Quantification</p>
       <ul class="network-icon" aria-hidden="true">
@@ -1111,14 +1268,27 @@ julia&gt; h(1,z=3,y=2)
 
 
 
-  
+
+
+
+
+
+
+
+
 
   
-
+  
+  
+  
   
 
-  
-  
+
+
+
+
+
+
 
 
 
@@ -1161,6 +1331,7 @@ julia&gt; h(1,z=3,y=2)
 
 
 
+
   <p class="powered-by">
     
     
@@ -1171,7 +1342,7 @@ julia&gt; h(1,z=3,y=2)
       
       
       
-      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+      Published with <a href="https://hugoblox.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Hugo Blox Builder</a> — the free, <a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -1180,120 +1351,154 @@ julia&gt; h(1,z=3,y=2)
     
   </div>
 
-      
+  
 
-    
-    <script src="/js/vendor-bundle.min.39c2c2890f0b42f46fe5d6e8216f4117.js"></script>
 
-    
-    
-    
-      
-      
-        <script src="https://cdn.jsdelivr.net/gh/desandro/imagesloaded@v4.1.4/imagesloaded.pkgd.min.js" integrity="sha512-S5PZ9GxJZO16tT9r3WJp/Safn31eu8uWrzglMahDT4dsmgqWonRY9grk3j+3tfuPr9WJNsfooOR7Gi7HL5W2jw==" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/gh/metafizzy/isotope@v3.0.6/dist/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
-      
+<script src="/js/vendor-bundle.min.ff7771056d34ad9f2de2d8f6a466e748.js"></script>
 
-      
-      
 
-      
 
-      
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
-        
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/julia.min.js" crossorigin="anonymous"></script>
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/python.min.js" crossorigin="anonymous"></script>
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/matlab.min.js" crossorigin="anonymous"></script>
-        
-      
 
-    
+  
 
-    
-    
-    
+  
+  
 
-    
-    
+  
 
-    
-    
-    
-      
-      <script id="search-hit-fuse-template" type="text/x-template">
-        <div class="search-hit" id="summary-{{key}}">
-          <div class="search-hit-content">
-            <div class="search-hit-name">
-              <a href="{{relpermalink}}">{{title}}</a>
-              <div class="article-metadata search-hit-type">{{type}}</div>
-              <p class="search-hit-description">{{snippet}}</p>
-            </div>
-          </div>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
         </div>
-      </script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
-      
-    
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
 
-    
-    
 
-    
-    
-    
-    
 
-    
-    
-      
-      
-      
-      
-      
-      
-      
-    
 
-    
 
-    
-    
-    
-    <script id="page-data" type="application/json">{"use_headroom":true}</script>
 
-    
-    
-      <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
-    
-    
-    
-    
-    
-    
-    
-      
-      
-    
-    
-    <script src="/en/js/wowchemy.min.8596a89120905039c56cde4d08aca1cf.js"></script>
 
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/en/js/wowchemy.min.7f5ebaff62ae468cff8bb3dd1337bb9b.js"></script>
+
+
+
+  <script src="/js/wowchemy-map.a26e9d2f7238ba5b868384f1c5bc6477.js" type="module"></script>
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.9c0e895144aef5a693008b5c5d450147.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
