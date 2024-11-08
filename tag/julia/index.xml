@@ -170,8 +170,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;計算時間は行列サイズ $n$ にほぼ比例するはずです（行列サイズが2倍になれば計算時間も約2倍）．&lt;/p&gt;
-</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;計算時間は行列サイズ $n$ にほぼ比例するはずです（行列サイズが2倍になれば計算時間も約2倍）．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -303,8 +302,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;Float64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;mf&#34;&gt;1.0&lt;/span&gt;  &lt;span class=&#34;mf&#34;&gt;1.0&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;mf&#34;&gt;2.0&lt;/span&gt;  &lt;span class=&#34;mf&#34;&gt;1.0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;あえて枢軸選択を行わないメリットはあまりないとは思いますが，例えば，matlabの素朴なLU分解と比較するときなどには &lt;code&gt;lu(A,Val(false))&lt;/code&gt; は役立つかもしれません．&lt;/p&gt;
-</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;あえて枢軸選択を行わないメリットはあまりないとは思いますが，例えば，matlabの素朴なLU分解と比較するときなどには &lt;code&gt;lu(A,Val(false))&lt;/code&gt; は役立つかもしれません．&lt;/p&gt;</description>
     </item>
     
   </channel>

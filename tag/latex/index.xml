@@ -23,8 +23,7 @@
 &lt;p&gt;（以下は何年も前の情報で，ここ数年，次のようなトラブルには遭遇していませんが，以前のwebページに載せていた情報をそのまま掲載します）&lt;/p&gt;
 &lt;p&gt;このpdfcropですが，ghostscript関係でエラーが起こることがあります．これは，TeXのインストール時に同時にインストールされるghostscriptとは別にhomebrewなどでghostscriptをインストールした場合に発生するようです．そんなときはターミナルから&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew link --overwrite ghostscript
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とすれば解決するようです．&lt;/p&gt;
-</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とすれば解決するようです．&lt;/p&gt;</description>
     </item>
     
   </channel>

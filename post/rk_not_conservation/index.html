@@ -3,7 +3,7 @@
 <!-- Last Published: November 8, 2024 --><html lang="en-us" >
 
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -73,7 +73,7 @@
 
   
 
-  <link rel="stylesheet" href="/css/vendor-bundle.min.26c458e6907dc03073573976b7f4044e.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/css/vendor-bundle.min.css" media="print" onload="this.media='all'">
 
   
   
@@ -217,7 +217,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.f6689966c0a10712f95f034011917db0.css" />
+  <link rel="stylesheet" href="/css/wowchemy.css" />
 
   
   
@@ -241,45 +241,6 @@
 
 
 
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119329001-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-      dataLayer.push(arguments);
-  }
-
-  function trackOutboundLink(url, target) {
-    gtag('event', 'click', {
-         'event_category': 'outbound',
-         'event_label': url,
-         'transport_type': 'beacon',
-         'event_callback': function () {
-           if (target !== '_blank') {
-             document.location = url;
-           }
-         }
-    });
-    console.debug("Outbound link clicked: " + url);
-  }
-
-  function onClickCallback(event) {
-    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
-      return;
-    }
-    trackOutboundLink(event.target, event.target.getAttribute('target'));  
-  }
-
-  gtag('js', new Date());
-  gtag('config', 'UA-119329001-1', {});
-  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
-
-  
-  document.addEventListener('click', onClickCallback, false);
-</script>
 
 
 
@@ -321,14 +282,14 @@
 
   
 
-<meta name="description" content="Matlabなどで図を描き，PDFで保存すると，想定外に余白が大きすぎることがあり，TeXで貼り付けるときに少々困ります．そんなときは，ターミナルから
-pdfcrop test.pdf
-とすれば余白は最小化されます．なお，TeXをTeX Liveでインストールしていればpdfcropは標準でインストールされているはずです．" />
+<meta name="description" content="$\newcommand{\bmk}{\boldsymbol{k}} \newcommand{\bmf}{\boldsymbol{f}} \newcommand{\bmu}{\boldsymbol{u}} \newcommand{\bbR}{\mathbb{R}}$ Runge–Kutta (RK) 法は常微分方程式の初期値問題
+\begin{align} \frac{\mathrm d}{\mathrm dt} \bmu(t) = \bmf (t,\bmu (t)), \quad \bmu(0) = \bmu_0\in\bbR^d \tag{1}\label{eq:ivp} \end{align}
+に対する代表的な数値解法クラスです（$\bmf$ は滑らかな関数とします）．常微分方程式 \eqref{eq:ivp} に対する $s$ 段のRK法は，刻み幅を $h$, 時刻 $t=nh$ における近似解を $\bmu_n (\approx \bmu(nh))$ と表す記法のもと，" />
 
 
 
-<link rel="alternate" hreflang="en-us" href="https://example.com/post/pdfcrop/" />
-<link rel="canonical" href="https://example.com/post/pdfcrop/" />
+<link rel="alternate" hreflang="en-us" href="http://localhost:1313/post/rk_not_conservation/" />
+<link rel="canonical" href="http://localhost:1313/post/rk_not_conservation/" />
 
 
 
@@ -362,7 +323,7 @@ pdfcrop test.pdf
 
   <meta property="twitter:site" content="@GetResearchDev" />
   <meta property="twitter:creator" content="@GetResearchDev" />
-<meta property="twitter:image" content="https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" />
+<meta property="twitter:image" content="http://localhost:1313/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" />
 
 
 
@@ -370,20 +331,20 @@ pdfcrop test.pdf
 
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="Yuto Miyatake" />
-<meta property="og:url" content="https://example.com/post/pdfcrop/" />
-<meta property="og:title" content="PDFの余白を小さくする | Yuto Miyatake" />
-<meta property="og:description" content="Matlabなどで図を描き，PDFで保存すると，想定外に余白が大きすぎることがあり，TeXで貼り付けるときに少々困ります．そんなときは，ターミナルから
-pdfcrop test.pdf
-とすれば余白は最小化されます．なお，TeXをTeX Liveでインストールしていればpdfcropは標準でインストールされているはずです．" /><meta property="og:image" content="https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:url" content="http://localhost:1313/post/rk_not_conservation/" />
+<meta property="og:title" content="常微分方程式の任意の保存量を再現するRunge-Kutta法は存在しない | Yuto Miyatake" />
+<meta property="og:description" content="$\newcommand{\bmk}{\boldsymbol{k}} \newcommand{\bmf}{\boldsymbol{f}} \newcommand{\bmu}{\boldsymbol{u}} \newcommand{\bbR}{\mathbb{R}}$ Runge–Kutta (RK) 法は常微分方程式の初期値問題
+\begin{align} \frac{\mathrm d}{\mathrm dt} \bmu(t) = \bmf (t,\bmu (t)), \quad \bmu(0) = \bmu_0\in\bbR^d \tag{1}\label{eq:ivp} \end{align}
+に対する代表的な数値解法クラスです（$\bmf$ は滑らかな関数とします）．常微分方程式 \eqref{eq:ivp} に対する $s$ 段のRK法は，刻み幅を $h$, 時刻 $t=nh$ における近似解を $\bmu_n (\approx \bmu(nh))$ と表す記法のもと，" /><meta property="og:image" content="http://localhost:1313/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
       property="article:published_time"
-      content="2022-02-01T10:53:04&#43;09:00"
+      content="2022-03-04T12:09:17&#43;09:00"
     />
   
   
-    <meta property="article:modified_time" content="2022-02-01T10:53:04&#43;09:00">
+    <meta property="article:modified_time" content="2022-03-04T12:09:17&#43;09:00">
   
 
 
@@ -409,12 +370,12 @@ pdfcrop test.pdf
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://example.com/post/pdfcrop/"
+    "@id": "http://localhost:1313/post/rk_not_conservation/"
   },
-  "headline": "PDFの余白を小さくする",
+  "headline": "常微分方程式の任意の保存量を再現するRunge-Kutta法は存在しない",
   
-  "datePublished": "2022-02-01T10:53:04+09:00",
-  "dateModified": "2022-02-01T10:53:04+09:00",
+  "datePublished": "2022-03-04T12:09:17+09:00",
+  "dateModified": "2022-03-04T12:09:17+09:00",
   
   "author": {
     "@type": "Person",
@@ -426,10 +387,10 @@ pdfcrop test.pdf
     "name": "Yuto Miyatake",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_192x192_fill_lanczos_center_3.png"
+      "url": "http://localhost:1313/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "\u003cp\u003eMatlabなどで図を描き，PDFで保存すると，想定外に余白が大きすぎることがあり，TeXで貼り付けるときに少々困ります．そんなときは，ターミナルから\u003c/p\u003e\n\u003cdiv class=\"highlight\"\u003e\u003cpre tabindex=\"0\" class=\"chroma\"\u003e\u003ccode class=\"language-bash\" data-lang=\"bash\"\u003e\u003cspan class=\"line\"\u003e\u003cspan class=\"cl\"\u003epdfcrop test.pdf\n\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003cp\u003eとすれば余白は最小化されます．なお，TeXをTeX Liveでインストールしていればpdfcropは標準でインストールされているはずです．\u003c/p\u003e"
+  "description": "$\\newcommand{\\bmk}{\\boldsymbol{k}} \\newcommand{\\bmf}{\\boldsymbol{f}} \\newcommand{\\bmu}{\\boldsymbol{u}} \\newcommand{\\bbR}{\\mathbb{R}}$ Runge–Kutta (RK) 法は常微分方程式の初期値問題\n\\begin{align} \\frac{\\mathrm d}{\\mathrm dt} \\bmu(t) = \\bmf (t,\\bmu (t)), \\quad \\bmu(0) = \\bmu_0\\in\\bbR^d \\tag{1}\\label{eq:ivp} \\end{align}\nに対する代表的な数値解法クラスです（$\\bmf$ は滑らかな関数とします）．常微分方程式 \\eqref{eq:ivp} に対する $s$ 段のRK法は，刻み幅を $h$, 時刻 $t=nh$ における近似解を $\\bmu_n (\\approx \\bmu(nh))$ と表す記法のもと，"
 }
 </script>
 
@@ -451,7 +412,7 @@ pdfcrop test.pdf
 
 
   
-  <title>PDFの余白を小さくする | Yuto Miyatake</title>
+  <title>常微分方程式の任意の保存量を再現するRunge-Kutta法は存在しない | Yuto Miyatake</title>
 
   
   
@@ -471,7 +432,7 @@ pdfcrop test.pdf
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="26e3dd9becb9c24f4f6d44e35f5c5251" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="d555c58f8084a9aacc56798fd4eb5b21" >
 
   
   
@@ -482,7 +443,7 @@ pdfcrop test.pdf
   
   
   
-  <script src="/js/wowchemy-init.min.9e4214442a7711d35691acd58f6f6361.js"></script>
+  <script src="/js/wowchemy-init.min.js"></script>
 
   
 
@@ -869,7 +830,7 @@ pdfcrop test.pdf
   
   
 <div class="article-container pt-3">
-  <h1>PDFの余白を小さくする</h1>
+  <h1>常微分方程式の任意の保存量を再現するRunge-Kutta法は存在しない</h1>
 
   
 
@@ -881,16 +842,6 @@ pdfcrop test.pdf
 
   
   
-  
-  
-  <div>
-    
-
-  <span class="author-highlighted">
-      Yuto Miyatake</span>
-  </div>
-  
-  
 
   
   <span class="article-date">
@@ -898,7 +849,7 @@ pdfcrop test.pdf
     
       
     
-    Feb 1, 2022
+    Mar 4, 2022
   </span>
   
 
@@ -907,7 +858,7 @@ pdfcrop test.pdf
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 min read
+    2 min read
   </span>
   
 
@@ -935,13 +886,62 @@ pdfcrop test.pdf
   <div class="article-container">
 
     <div class="article-style">
-      <p>Matlabなどで図を描き，PDFで保存すると，想定外に余白が大きすぎることがあり，TeXで貼り付けるときに少々困ります．そんなときは，ターミナルから</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pdfcrop test.pdf
-</span></span></code></pre></div><p>とすれば余白は最小化されます．なお，TeXをTeX Liveでインストールしていればpdfcropは標準でインストールされているはずです．</p>
-<p>（以下は何年も前の情報で，ここ数年，次のようなトラブルには遭遇していませんが，以前のwebページに載せていた情報をそのまま掲載します）</p>
-<p>このpdfcropですが，ghostscript関係でエラーが起こることがあります．これは，TeXのインストール時に同時にインストールされるghostscriptとは別にhomebrewなどでghostscriptをインストールした場合に発生するようです．そんなときはターミナルから</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew link --overwrite ghostscript
-</span></span></code></pre></div><p>とすれば解決するようです．</p>
+      <p>$\newcommand{\bmk}{\boldsymbol{k}}
+\newcommand{\bmf}{\boldsymbol{f}}
+\newcommand{\bmu}{\boldsymbol{u}}
+\newcommand{\bbR}{\mathbb{R}}$
+Runge–Kutta (RK) 法は常微分方程式の初期値問題</p>
+<p>\begin{align}
+\frac{\mathrm d}{\mathrm dt} \bmu(t) = \bmf (t,\bmu (t)), \quad \bmu(0) = \bmu_0\in\bbR^d \tag{1}\label{eq:ivp}
+\end{align}</p>
+<p>に対する代表的な数値解法クラスです（$\bmf$ は滑らかな関数とします）．常微分方程式 \eqref{eq:ivp} に対する $s$ 段のRK法は，刻み幅を $h$, 時刻 $t=nh$ における近似解を $\bmu_n (\approx \bmu(nh))$ と表す記法のもと，</p>
+<p>\begin{align}
+\bmu_{1} &amp;= \bmu_0 +h \sum_{i=1}^s b_i \bmk_i, \cr \bmk_i&amp;=\bmf \big(c_ih,\bmu_0+h \sum_{j=1}^s a_{ij} \bmk_j \big), \quad j=1,\dots,s
+\end{align}</p>
+<p>と表せます．</p>
+<p>常微分方程式の初期値問題は，Newtonの運動方程式のエネルギー保存則のように，時間発展に関して<strong>不変</strong>な「<strong>保存量</strong>」を持つことがあります．これらは物理的にも重要な量であることが多いので，数値計算においても，保存則が成立してくれると，定性的に良い計算結果が期待できます．しかし，Euler法やよく知られている4段4次の陽的RK法を用いると，保存則は壊れてしまいます．</p>
+<p>では，いかなるRK法を用いても保存量を再現する事ができないかというとそんなことはありません．例えば，$d=2$ のときに調和振動子を考えてみましょう．変数 $\bmu$ を $\bmu= (q,p)$ と書くことにすると，調和振動子は</p>
+<p>\begin{align}
+\frac{\mathrm d}{\mathrm dt} q(t) = p(t), \quad \frac{\mathrm d}{\mathrm dt}p(t) = - q(t)
+\end{align}</p>
+<p>と表されますが，$H(q,p) = \frac{1}{2}(q^2 + p^2 )$ は保存量となっています．すなわち，</p>
+<p>\begin{align}
+\frac{\mathrm d}{\mathrm dt} H(q(t),p(t)) = q(t) \dot{q}(t) + p(t) \dot{p}(t) = q(t) p(t) + p(t) (-q(t)) =0
+\end{align}</p>
+<p>が成り立ちます．ここで，1つ目の等号は連鎖律，2つ目の等号は微分方程式の代入により成り立ちます．調和振動子を中点則で離散化してみます．中点則とは，陰的RK法の公式の一つで，段数は1段 ($s=1$) でありRK法の係数は $$(a,b,c) = \Big(\frac{1}{2},1,\frac{1}{2}\Big)$$ です．中点則を調和振動子に適用し，整理すると次のようになります：</p>
+<p>\begin{align}
+\frac{q_1 - q_0}{h} = \frac{p_1 + p_0}{2}, \quad \frac{p_1 - p_0}{h} = -\frac{q_1 + q_0}{2}.
+\end{align}</p>
+<p>実は簡単な計算により $H(q_1,p_1) = H(q_0,p_0)$ であることが分かります．実際，</p>
+<p>\begin{align}
+\frac{H(q_1,p_1) - H(q_0,p_0)}{h} &amp;= \frac{q_1+q_0}{2}\frac{q_1-q_0}{2} + \frac{p_1+p_0}{2}\frac{p_1-p_0}{2} \cr
+&amp;= \frac{q_1+q_0}{2} \frac{p_1+p_0}{2} + \frac{p_1+p_0}{2} \big( - \frac{q_1+q_0}{2}\big) \cr
+&amp;=0
+\end{align}</p>
+<p>が成り立ちます．ここで，1つ目の等号は因数分解，2つ目の等号は中点則の代入により成り立ちます（連続の場合とほぼ同様です）．
+さらに，全く同様に $H(q_{n+1},p_{n+1}) = H(q_n,p_n)$ が成り立つので，$H(q_n,p_n) = H(q_0,p_0)$ であることが分かります．</p>
+<p>以上は，調和振動子という特殊な常微分方程式に中点則という特殊なRK法を適用したときの考察でしたが，実はもう少し一般的な主張が成り立ちます．どんな常微分方程式であっても，多項式で表現される保存量があり，かつその保存量の最高次数を知っていれば，その保存量を再現するRK法の公式を構築することができます．</p>
+<p>ここまでは，「できたらいいなぁ」と思うことが実際にできるという内容でしたが，もう少し踏み込んで，<strong>任意の保存量を再現するRK法は存在するか</strong>という問いを考えてみます．</p>
+<p>残念ながら，そのような理想のRK法は<strong>存在しません</strong><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>．</p>
+<div class="alert alert-note">
+  <div>
+    <strong>定理</strong> <br>任意の常微分方程式に対してその保存則を離散化後も再現するRK法は存在しない．
+  </div>
+</div>
+<p>この事実は次のように簡単に示せます．前提としてRK法の係数について$\sum_i b_i = 1$ は仮定します（1次以上の精度を達成するための（言い換えれば近似として最低限の意味を持つための）必要条件です）．関数 $F(q)$ の微分 $f(q) = F^\prime (q)$ を用いて，常微分方程式<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>\begin{align}
+\frac{\mathrm d}{\mathrm dt} q(t) = 1, \quad \frac{\mathrm d}{\mathrm dt}p(t) = f(q)
+\end{align}</p>
+<p>を考えてみます．調和振動子の場合と同様のロジックで $H(q,p) = p - F(q)$ が保存量であることがすぐに分かります．変数 $q$ についての厳密解は初期値を $q(0)=q_0$ とすれば明らかに $q(t) = q_0 +t$ ですが，RK法による解は $q_1 = q_0 + h$ となり厳密解と一致します．したがって，いま考えている常微分方程式は2変数の問題ですから，RK法が $H$ を保存するには $p$ についても近似解と厳密解が一致しなければなりません．変数 $p$ の厳密解は $p(t) = p_0 + \int_0^t f(s)  \ \mathrm ds$ ですから，近似解と厳密解が一致するということは，任意の被積分関数に対する定積分を厳密に計算する求積法が存在することと同値です．しかし，残念ながらそのような夢の求積法は存在せず（選点上で $0$ をとり，選点以外では正値をとる関数を考えればほぼ自明です），任意の保存量を再現するRK法は存在しないことが分かります．</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>E. Celledoni, R. I. McLachlan, D. I. McLaren, B. Owren, G. R. W. Quispel and W. M. Wright: <a href="https://doi.org/10.1051/m2an/2009020" target="_blank" rel="noopener">Energy-preserving Runge–Kutta methods</a>, ESIAM Math. Model. Numer. Anal. 43 (2009) 645–649.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
     </div>
 
     
@@ -952,7 +952,11 @@ pdfcrop test.pdf
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tag/latex/">Latex</a>
+  <a class="badge badge-light" href="/tag/%E6%95%B0%E5%80%A4%E8%A7%A3%E6%9E%90/">数値解析</a>
+  
+  <a class="badge badge-light" href="/tag/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F/">常微分方程式</a>
+  
+  <a class="badge badge-light" href="/tag/ode/">ODE</a>
   
 </div>
 
@@ -973,7 +977,7 @@ pdfcrop test.pdf
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fexample.com%2Fpost%2Fpdfcrop%2F&amp;text=PDF%E3%81%AE%E4%BD%99%E7%99%BD%E3%82%92%E5%B0%8F%E3%81%95%E3%81%8F%E3%81%99%E3%82%8B" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+        <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2Frk_not_conservation%2F&amp;text=%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F%E3%81%AE%E4%BB%BB%E6%84%8F%E3%81%AE%E4%BF%9D%E5%AD%98%E9%87%8F%E3%82%92%E5%86%8D%E7%8F%BE%E3%81%99%E3%82%8BRunge-Kutta%E6%B3%95%E3%81%AF%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -990,7 +994,7 @@ pdfcrop test.pdf
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fexample.com%2Fpost%2Fpdfcrop%2F&amp;t=PDF%E3%81%AE%E4%BD%99%E7%99%BD%E3%82%92%E5%B0%8F%E3%81%95%E3%81%8F%E3%81%99%E3%82%8B" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+        <a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A1313%2Fpost%2Frk_not_conservation%2F&amp;t=%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F%E3%81%AE%E4%BB%BB%E6%84%8F%E3%81%AE%E4%BF%9D%E5%AD%98%E9%87%8F%E3%82%92%E5%86%8D%E7%8F%BE%E3%81%99%E3%82%8BRunge-Kutta%E6%B3%95%E3%81%AF%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -1009,7 +1013,7 @@ pdfcrop test.pdf
         
       
       <li>
-        <a href="mailto:?subject=PDF%E3%81%AE%E4%BD%99%E7%99%BD%E3%82%92%E5%B0%8F%E3%81%95%E3%81%8F%E3%81%99%E3%82%8B&amp;body=https%3A%2F%2Fexample.com%2Fpost%2Fpdfcrop%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+        <a href="mailto:?subject=%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F%E3%81%AE%E4%BB%BB%E6%84%8F%E3%81%AE%E4%BF%9D%E5%AD%98%E9%87%8F%E3%82%92%E5%86%8D%E7%8F%BE%E3%81%99%E3%82%8BRunge-Kutta%E6%B3%95%E3%81%AF%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84&amp;body=http%3A%2F%2Flocalhost%3A1313%2Fpost%2Frk_not_conservation%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -1026,7 +1030,7 @@ pdfcrop test.pdf
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fexample.com%2Fpost%2Fpdfcrop%2F&amp;title=PDF%E3%81%AE%E4%BD%99%E7%99%BD%E3%82%92%E5%B0%8F%E3%81%95%E3%81%8F%E3%81%99%E3%82%8B" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+        <a href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2Frk_not_conservation%2F&amp;title=%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F%E3%81%AE%E4%BB%BB%E6%84%8F%E3%81%AE%E4%BF%9D%E5%AD%98%E9%87%8F%E3%82%92%E5%86%8D%E7%8F%BE%E3%81%99%E3%82%8BRunge-Kutta%E6%B3%95%E3%81%AF%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -1043,7 +1047,7 @@ pdfcrop test.pdf
       
       
       <li>
-        <a href="whatsapp://send?text=PDF%E3%81%AE%E4%BD%99%E7%99%BD%E3%82%92%E5%B0%8F%E3%81%95%E3%81%8F%E3%81%99%E3%82%8B%20https%3A%2F%2Fexample.com%2Fpost%2Fpdfcrop%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+        <a href="whatsapp://send?text=%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F%E3%81%AE%E4%BB%BB%E6%84%8F%E3%81%AE%E4%BF%9D%E5%AD%98%E9%87%8F%E3%82%92%E5%86%8D%E7%8F%BE%E3%81%99%E3%82%8BRunge-Kutta%E6%B3%95%E3%81%AF%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84%20http%3A%2F%2Flocalhost%3A1313%2Fpost%2Frk_not_conservation%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -1060,7 +1064,7 @@ pdfcrop test.pdf
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fexample.com%2Fpost%2Fpdfcrop%2F&amp;title=PDF%E3%81%AE%E4%BD%99%E7%99%BD%E3%82%92%E5%B0%8F%E3%81%95%E3%81%8F%E3%81%99%E3%82%8B" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+        <a href="https://service.weibo.com/share/share.php?url=http%3A%2F%2Flocalhost%3A1313%2Fpost%2Frk_not_conservation%2F&amp;title=%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F%E3%81%AE%E4%BB%BB%E6%84%8F%E3%81%AE%E4%BF%9D%E5%AD%98%E9%87%8F%E3%82%92%E5%86%8D%E7%8F%BE%E3%81%99%E3%82%8BRunge-Kutta%E6%B3%95%E3%81%AF%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1080,7 +1084,6 @@ pdfcrop test.pdf
 
   
   
-    
 
 
 
@@ -1094,11 +1097,11 @@ pdfcrop test.pdf
   <div class="media author-card content-widget-hr">
     
       
-      <a href="https://example.com/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hud32dce2a057cb0f8ccd334a8b55765c5_304564_270x270_fill_q75_lanczos_center.jpg" alt="Yuto Miyatake"></a>
+      <a href="http://localhost:1313/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hud32dce2a057cb0f8ccd334a8b55765c5_304564_270x270_fill_q75_lanczos_center.jpg" alt="Yuto Miyatake"></a>
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="https://example.com/">Yuto Miyatake</a></h5>
+      <h5 class="card-title"><a href="http://localhost:1313/">Yuto Miyatake</a></h5>
       <h6 class="card-subtitle">Associate Professor</h6>
       <p class="card-text">Applied Mathematics, Numerical Analysis, Computational Uncertain Quantification</p>
       <ul class="network-icon" aria-hidden="true">
@@ -1218,7 +1221,6 @@ pdfcrop test.pdf
   </div>
 
 
-  
 
 
 
@@ -1335,7 +1337,7 @@ pdfcrop test.pdf
   
 
 
-<script src="/js/vendor-bundle.min.ff7771056d34ad9f2de2d8f6a466e748.js"></script>
+<script src="/js/vendor-bundle.min.js"></script>
 
 
 
@@ -1416,7 +1418,7 @@ pdfcrop test.pdf
 <script id="page-data" type="application/json">{"use_headroom":true}</script>
 
 
-  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+  <script src="/js/wowchemy-headroom.js" type="module"></script>
 
 
 
@@ -1430,11 +1432,11 @@ pdfcrop test.pdf
   
 
 
-<script src="/en/js/wowchemy.min.7f5ebaff62ae468cff8bb3dd1337bb9b.js"></script>
+<script src="/en/js/wowchemy.min.js"></script>
 
 
 
-  <script src="/js/wowchemy-map.a26e9d2f7238ba5b868384f1c5bc6477.js" type="module"></script>
+  <script src="/js/wowchemy-map.js" type="module"></script>
 
 
 
@@ -1467,7 +1469,7 @@ pdfcrop test.pdf
 </div>
 
 
-  <script src="/js/wowchemy-publication.9c0e895144aef5a693008b5c5d450147.js" type="module"></script>
+  <script src="/js/wowchemy-publication.js" type="module"></script>
 
 
 

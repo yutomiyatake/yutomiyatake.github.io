@@ -19,7 +19,7 @@
       <guid>https://example.com/post/beijing2024/</guid>
       <description>&lt;p&gt;2019年以来5年ぶりの北京出張．手続きや現地の様子など以前と大きく変わっていたこともあったので，その備忘録です．&lt;/p&gt;
 &lt;h3 id=&#34;ビザ&#34;&gt;ビザ&lt;/h3&gt;
-&lt;p&gt;中国に渡航するには，ビザを申請しないといけません．大阪の場合，心斎橋の少し北にある中国ビザ申請センターに，申請時と受取時の2回行くことになります．
+&lt;p&gt;中国に渡航するには，ビザを申請する必要があります．大阪の場合，心斎橋の少し北にある中国ビザ申請センターに，申請時と受取時の2回行くことになります．
 待ち時間もそれなりで，平日の朝一で行って，一時間待ちくらい．&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;大阪で申請する場合，ウェブサイトで大阪を選択して，申請書を作成しないといけないようです（これは本当かどうかよく分かりませんが，東京か名古屋を選択していて作り直しをさせられていた人がいました）&lt;/li&gt;
@@ -63,8 +63,7 @@
 &lt;h3 id=&#34;翻訳アプリ&#34;&gt;翻訳アプリ&lt;/h3&gt;
 &lt;p&gt;今回はアリペイの翻訳アプリが大活躍．現地の人も（いろいろな）翻訳アプリを「中国語→英語」で使っていて，精度はなかなか良さそうでした．&lt;/p&gt;
 &lt;h3 id=&#34;食事&#34;&gt;食事&lt;/h3&gt;
-&lt;p&gt;うまい．ただし，食べ過ぎ飲み過ぎには注意．ビールは常温で出てくると困るので，冷たいビールが飲みたいならば，注文時に念押しする必要があります．「冰（ビン）」といえば伝わることが多かったです．ただ，一回，QRコードオーダーで注文したとき，うっかり常温のビールを飲む羽目になってしまいました&amp;hellip;&lt;/p&gt;
-</description>
+&lt;p&gt;うまい．ただし，食べ過ぎ飲み過ぎには注意．ビールは常温で出てくると困るので，冷たいビールが飲みたいならば，注文時に念押しする必要があります．「冰（ビン）」といえば伝わることが多かったです．ただ，一回，QRコードオーダーで注文したとき，うっかり常温のビールを飲む羽目になってしまいました&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -225,8 +224,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;計算時間は行列サイズ $n$ にほぼ比例するはずです（行列サイズが2倍になれば計算時間も約2倍）．&lt;/p&gt;
-</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;計算時間は行列サイズ $n$ にほぼ比例するはずです（行列サイズが2倍になれば計算時間も約2倍）．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -254,8 +252,7 @@
 &lt;p&gt;（以下は何年も前の情報で，ここ数年，次のようなトラブルには遭遇していませんが，以前のwebページに載せていた情報をそのまま掲載します）&lt;/p&gt;
 &lt;p&gt;このpdfcropですが，ghostscript関係でエラーが起こることがあります．これは，TeXのインストール時に同時にインストールされるghostscriptとは別にhomebrewなどでghostscriptをインストールした場合に発生するようです．そんなときはターミナルから&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew link --overwrite ghostscript
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とすれば解決するようです．&lt;/p&gt;
-</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とすれば解決するようです．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -387,8 +384,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;Float64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;mf&#34;&gt;1.0&lt;/span&gt;  &lt;span class=&#34;mf&#34;&gt;1.0&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;mf&#34;&gt;2.0&lt;/span&gt;  &lt;span class=&#34;mf&#34;&gt;1.0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;あえて枢軸選択を行わないメリットはあまりないとは思いますが，例えば，matlabの素朴なLU分解と比較するときなどには &lt;code&gt;lu(A,Val(false))&lt;/code&gt; は役立つかもしれません．&lt;/p&gt;
-</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;あえて枢軸選択を行わないメリットはあまりないとは思いますが，例えば，matlabの素朴なLU分解と比較するときなどには &lt;code&gt;lu(A,Val(false))&lt;/code&gt; は役立つかもしれません．&lt;/p&gt;</description>
     </item>
     
     <item>

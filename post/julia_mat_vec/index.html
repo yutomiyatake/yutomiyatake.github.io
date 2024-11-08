@@ -321,9 +321,10 @@
 
   
 
-<meta name="description" content="科学技術計算では行列ベクトル積が頻繁に登場し，これを効率よく計算することはとても重要です． 行列サイズ $n$ に対して計算量は $\mathrm{O}(n^2)$ ですが，行列は疎行列（ほとんどの要素が $0$）であることが多く，定義通りに計算すると $0$ を掛けたり足したりする無駄な演算が多く発生してしまいます． 以下では疎行列とベクトルの積の計算について解説します． （もっとも，Juliaで行列ベクトル積 $A\boldsymbol{b}$ を計算するには A*b と書けばよく，これは $A$ が疎行列の場合でも同様なので，疎行列のパッケージがあることさえ知っていれば実用上は十分なことが多いのですが，とはいえ，チューニングを行ったり，上三角部分など行列の一部とベクトルの積を計算したりしたいときには，疎行列とベクトルの積がどのように計算されているか理解しておくことが重要です．）
-まず，行列 $A$ を適当に定義して，疎行列に変換してみましょう．
-julia&gt; using SparseArrays julia&gt; A = [1 2 5; 0 3 0; 0 4 6] 3×3 Array{Int64,2}: 1 2 5 0 3 0 0 4 6 julia&gt; A = sparse(A) 3×3 SparseMatrixCSC{Int64,Int64} with 6 stored entries: [1, 1] = 1 [1, 2] = 2 [2, 2] = 3 [3, 2] = 4 [1, 3] = 5 [3, 3] = 6 マニュアルによれば，圧縮列格納方式 (CSC) が採用されています．" />
+<meta name="description" content="科学技術計算では行列ベクトル積が頻繁に登場し，これを効率よく計算することはとても重要です．
+行列サイズ $n$ に対して計算量は $\mathrm{O}(n^2)$ ですが，行列は疎行列（ほとんどの要素が $0$）であることが多く，定義通りに計算すると $0$ を掛けたり足したりする無駄な演算が多く発生してしまいます．
+以下では疎行列とベクトルの積の計算について解説します．
+（もっとも，Juliaで行列ベクトル積 $A\boldsymbol{b}$ を計算するには A*b と書けばよく，これは $A$ が疎行列の場合でも同様なので，疎行列のパッケージがあることさえ知っていれば実用上は十分なことが多いのですが，とはいえ，チューニングを行ったり，上三角部分など行列の一部とベクトルの積を計算したりしたいときには，疎行列とベクトルの積がどのように計算されているか理解しておくことが重要です．）" />
 
 
 
@@ -372,9 +373,10 @@ julia&gt; using SparseArrays julia&gt; A = [1 2 5; 0 3 0; 0 4 6] 3×3 Array{Int6
 <meta property="og:site_name" content="Yuto Miyatake" />
 <meta property="og:url" content="https://example.com/post/julia_mat_vec/" />
 <meta property="og:title" content="Juliaの行列ベクトル積について（疎行列編） | Yuto Miyatake" />
-<meta property="og:description" content="科学技術計算では行列ベクトル積が頻繁に登場し，これを効率よく計算することはとても重要です． 行列サイズ $n$ に対して計算量は $\mathrm{O}(n^2)$ ですが，行列は疎行列（ほとんどの要素が $0$）であることが多く，定義通りに計算すると $0$ を掛けたり足したりする無駄な演算が多く発生してしまいます． 以下では疎行列とベクトルの積の計算について解説します． （もっとも，Juliaで行列ベクトル積 $A\boldsymbol{b}$ を計算するには A*b と書けばよく，これは $A$ が疎行列の場合でも同様なので，疎行列のパッケージがあることさえ知っていれば実用上は十分なことが多いのですが，とはいえ，チューニングを行ったり，上三角部分など行列の一部とベクトルの積を計算したりしたいときには，疎行列とベクトルの積がどのように計算されているか理解しておくことが重要です．）
-まず，行列 $A$ を適当に定義して，疎行列に変換してみましょう．
-julia&gt; using SparseArrays julia&gt; A = [1 2 5; 0 3 0; 0 4 6] 3×3 Array{Int64,2}: 1 2 5 0 3 0 0 4 6 julia&gt; A = sparse(A) 3×3 SparseMatrixCSC{Int64,Int64} with 6 stored entries: [1, 1] = 1 [1, 2] = 2 [2, 2] = 3 [3, 2] = 4 [1, 3] = 5 [3, 3] = 6 マニュアルによれば，圧縮列格納方式 (CSC) が採用されています．" /><meta property="og:image" content="https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content="科学技術計算では行列ベクトル積が頻繁に登場し，これを効率よく計算することはとても重要です．
+行列サイズ $n$ に対して計算量は $\mathrm{O}(n^2)$ ですが，行列は疎行列（ほとんどの要素が $0$）であることが多く，定義通りに計算すると $0$ を掛けたり足したりする無駄な演算が多く発生してしまいます．
+以下では疎行列とベクトルの積の計算について解説します．
+（もっとも，Juliaで行列ベクトル積 $A\boldsymbol{b}$ を計算するには A*b と書けばよく，これは $A$ が疎行列の場合でも同様なので，疎行列のパッケージがあることさえ知っていれば実用上は十分なことが多いのですが，とはいえ，チューニングを行ったり，上三角部分など行列の一部とベクトルの積を計算したりしたいときには，疎行列とベクトルの積がどのように計算されているか理解しておくことが重要です．）" /><meta property="og:image" content="https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -429,7 +431,7 @@ julia&gt; using SparseArrays julia&gt; A = [1 2 5; 0 3 0; 0 4 6] 3×3 Array{Int6
       "url": "https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "科学技術計算では行列ベクトル積が頻繁に登場し，これを効率よく計算することはとても重要です． 行列サイズ $n$ に対して計算量は $\\mathrm{O}(n^2)$ ですが，行列は疎行列（ほとんどの要素が $0$）であることが多く，定義通りに計算すると $0$ を掛けたり足したりする無駄な演算が多く発生してしまいます． 以下では疎行列とベクトルの積の計算について解説します． （もっとも，Juliaで行列ベクトル積 $A\\boldsymbol{b}$ を計算するには A*b と書けばよく，これは $A$ が疎行列の場合でも同様なので，疎行列のパッケージがあることさえ知っていれば実用上は十分なことが多いのですが，とはいえ，チューニングを行ったり，上三角部分など行列の一部とベクトルの積を計算したりしたいときには，疎行列とベクトルの積がどのように計算されているか理解しておくことが重要です．）\nまず，行列 $A$ を適当に定義して，疎行列に変換してみましょう．\njulia\u0026gt; using SparseArrays julia\u0026gt; A = [1 2 5; 0 3 0; 0 4 6] 3×3 Array{Int64,2}: 1 2 5 0 3 0 0 4 6 julia\u0026gt; A = sparse(A) 3×3 SparseMatrixCSC{Int64,Int64} with 6 stored entries: [1, 1] = 1 [1, 2] = 2 [2, 2] = 3 [3, 2] = 4 [1, 3] = 5 [3, 3] = 6 マニュアルによれば，圧縮列格納方式 (CSC) が採用されています．"
+  "description": "\u003cp\u003e科学技術計算では行列ベクトル積が頻繁に登場し，これを効率よく計算することはとても重要です．\n行列サイズ $n$ に対して計算量は $\\mathrm{O}(n^2)$ ですが，行列は疎行列（ほとんどの要素が $0$）であることが多く，定義通りに計算すると $0$ を掛けたり足したりする無駄な演算が多く発生してしまいます．\n以下では疎行列とベクトルの積の計算について解説します．\n（もっとも，Juliaで行列ベクトル積 $A\\boldsymbol{b}$ を計算するには \u003ccode\u003eA*b\u003c/code\u003e と書けばよく，これは $A$ が疎行列の場合でも同様なので，疎行列のパッケージがあることさえ知っていれば実用上は十分なことが多いのですが，とはいえ，チューニングを行ったり，上三角部分など行列の一部とベクトルの積を計算したりしたいときには，疎行列とベクトルの積がどのように計算されているか理解しておくことが重要です．）\u003c/p\u003e"
 }
 </script>
 
@@ -881,6 +883,16 @@ julia&gt; using SparseArrays julia&gt; A = [1 2 5; 0 3 0; 0 4 6] 3×3 Array{Int6
 
   
   
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Yuto Miyatake</span>
+  </div>
+  
+  
 
   
   <span class="article-date">
@@ -1033,7 +1045,6 @@ julia&gt; using SparseArrays julia&gt; A = [1 2 5; 0 3 0; 0 4 6] 3×3 Array{Int6
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">main</span><span class="p">()</span>
 </span></span></code></pre></div><p>計算時間は行列サイズ $n$ にほぼ比例するはずです（行列サイズが2倍になれば計算時間も約2倍）．</p>
-
     </div>
 
     
@@ -1172,6 +1183,7 @@ julia&gt; using SparseArrays julia&gt; A = [1 2 5; 0 3 0; 0 4 6] 3×3 Array{Int6
 
   
   
+    
 
 
 
@@ -1309,6 +1321,7 @@ julia&gt; using SparseArrays julia&gt; A = [1 2 5; 0 3 0; 0 4 6] 3×3 Array{Int6
   </div>
 
 
+  
 
 
 
