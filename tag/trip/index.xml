@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Trip | Yuto Miyatake</title>
+    <title>trip | Yuto Miyatake</title>
     <link>https://example.com/tag/trip/</link>
       <atom:link href="https://example.com/tag/trip/index.xml" rel="self" type="application/rss+xml" />
-    <description>Trip</description>
+    <description>trip</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 08 Nov 2024 09:44:45 +0900</lastBuildDate>
     <image>
       <url>https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
-      <title>Trip</title>
+      <title>trip</title>
       <link>https://example.com/tag/trip/</link>
     </image>
     
