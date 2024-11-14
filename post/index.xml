@@ -5,12 +5,57 @@
     <link>https://example.com/post/</link>
       <atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 08 Nov 2024 09:44:45 +0900</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 13 Nov 2024 22:52:00 +0900</lastBuildDate>
     <image>
       <url>https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
       <link>https://example.com/post/</link>
     </image>
+    
+    <item>
+      <title>エクストリーム・サウナ</title>
+      <link>https://example.com/post/extreme_sauna/</link>
+      <pubDate>Wed, 13 Nov 2024 22:52:00 +0900</pubDate>
+      <guid>https://example.com/post/extreme_sauna/</guid>
+      <description>&lt;p&gt;8月にフィンランドでエクストリーム・サウナを体験しました．&lt;/p&gt;
+&lt;p&gt;滞在中にラッペーンランタで1回，ヘルシンキ近郊で1回サウナを体験しましたが，ここでは，特に印象的だったラッペーンランタでの体験を振り返ります．&lt;/p&gt;
+&lt;p&gt;ラッペーンランタ大学に滞在中，サウナクラブ（？）の方（数学者）が主催のサウナイベントに誘っていただきました．
+場所は，ラッペーンランタ市街地からは車で20〜30分ほど離れた&lt;a href=&#34;https://www.saimaansaunaseura.fi/?page_id=16&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;サウナ施設&lt;/a&gt;で，夕方くらいに大学を出発しました．
+途中，スーパーでバーベキューセットや飲み物を購入し，車で現地へ向かいました．
+参加者はおおよそ20人ほどだったと思います．&lt;/p&gt;
+&lt;p&gt;到着すると，サウナマスターがスモークサウナの準備を開始．&lt;/p&gt;
+&lt;img src=&#34;room.jpg&#34; alt=&#34;&#34; width=60%&gt;
+&lt;p&gt;同時に，薪に火をいれてバーベキューの準備を進めます．
+その間に，各々水着に着替えます．
+バーベキューは屋外ですが，このときの気温は15℃ほど．
+数日前まで猛暑の日本にいた私にとっては，かなり寒い気温です．&lt;/p&gt;
+&lt;img src=&#34;lake.jpg&#34; alt=&#34;&#34; width=60%&gt;
+&lt;p&gt;まず指示されたことは，まずサイマー湖で頭まで浸かって全身を冷やすことでした．
+フィンランド人の多くは平然とこなしていましたが，
+私ともう一人のアジア系の研究者は凍えていました．&lt;/p&gt;
+&lt;p&gt;その後は，数分サウナに入り，外に出てソーセージを食べるという流れを繰り返しながら，みんなで楽しく過ごしていました．
+このときのサウナが，いわゆるスモークサウナの標準的な楽しみ方だったのだと思います．&lt;/p&gt;
+&lt;img src=&#34;sausage.jpg&#34; alt=&#34;&#34; width=60%&gt;
+&lt;p&gt;1時間ほど経った頃，「そろそろエクストリーム・サウナ！全員集合！」の号令が！&lt;/p&gt;
+&lt;p&gt;なんだか危険な予感がしつつも，それぞれビールやロングドリンクを片手にサウナルームへ（日本人の感覚からするととても危険！）．
+サウナマスターのスマホから流れるリトアニア（かエストニア）のポップミュージックに合わせて，3〜5秒おきに，「ばっしゃんばっしゃん」とサウナストーンに水が掛けられます．
+一瞬にして，サウナルームの特に高い位置の温度が上昇します．&lt;/p&gt;
+&lt;p&gt;本能的に耳を抑えます．髪は熱くて触れられず，高温の水蒸気によりすぐに息苦しくなりました．
+限界は近づく中，フィンランド人はまだ平然とビールを飲んでいます．
+それから10秒か20秒ほど経って，隣にいたドイツ人が耐えきれず低い位置へ移動．
+それを見て私も移動しました．
+サウナストーンより低い位置は比較的楽でしたが，この時点でまだ高い位置に座っていたフィンランド人たちも徐々に脱落し，その後は，再びサイマー湖へ．&lt;/p&gt;
+&lt;p&gt;さらに数十分後&amp;hellip;「次はサウナコンペティション！」&lt;/p&gt;
+&lt;p&gt;エクストリーム・サウナとは異なり，とにかく高温にして耐えるコンペティションのようでした．
+「おそらく室温は120〜130℃くらいになる」，「過去に World Sauna Championships で死亡事故もあった」，というような話もあり，
+フィンランド人以外は参加せず&amp;hellip;&lt;/p&gt;
+&lt;p&gt;その後，参加者の一人が車でホテルまで送ってくれました．
+ホテルの鏡を見てみると，腕や胸部の血管が真っ赤に浮き上がっていました&amp;hellip;&lt;/p&gt;
+&lt;p&gt;ラッペーンランタはロシア国境付近の町で，ヘルシンキから電車で約2時間の場所にあります．ヘルシンキ空港からは，Tikkurila (Vantaa) での乗り換えが必要です．
+自然が豊かで，とても気持ちの良い場所でした．天候不良のためサイマー湖のクルーズには行けませんでしたが，サイクリングを楽しみました．
+また，夏限定とは思いますが，ラッペーンランタの見どころの一つとしてSand Castle（砂の城）があります．&lt;/p&gt;
+&lt;img src=&#34;sand.jpg&#34; alt=&#34;&#34; width=60%&gt;</description>
+    </item>
     
     <item>
       <title>北京出張の備忘録</title>
