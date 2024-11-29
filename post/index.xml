@@ -5,12 +5,111 @@
     <link>https://example.com/post/</link>
       <atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 13 Nov 2024 22:52:00 +0900</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 29 Nov 2024 13:14:04 +0900</lastBuildDate>
     <image>
       <url>https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
       <link>https://example.com/post/</link>
     </image>
+    
+    <item>
+      <title>CR分解</title>
+      <link>https://example.com/post/cr/</link>
+      <pubDate>Fri, 29 Nov 2024 13:14:04 +0900</pubDate>
+      <guid>https://example.com/post/cr/</guid>
+      <description>&lt;p&gt;最近，行列のCR分解が気に入っている．
+CR分解とは，行列の簡約化を利用して，その行列を二つの行列積に分解するものである．&lt;/p&gt;
+&lt;p&gt;次の行列を考える：
+$$A = \begin{bmatrix}
+1 &amp;amp; 2 &amp;amp; 2 &amp;amp; 6\cr
+3 &amp;amp; 6 &amp;amp; 8 &amp;amp; 24 \cr
+2 &amp;amp; 4 &amp;amp; 4 &amp;amp; 12
+\end{bmatrix}.
+$$
+この行列の簡約化は
+$$
+\begin{bmatrix}
+1 &amp;amp; 2 &amp;amp; 0 &amp;amp; 0 \cr
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 3 \cr
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0
+\end{bmatrix}
+$$
+である．ここで次のように行列$C$, $R$を作る．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;簡約な行列の主成分は1列目と3列目にある．これに対応し，行列$A$の1列目と3列目を抜き出した行列を$C$とする：
+$$ C =
+\begin{bmatrix}
+1 &amp;amp; 2 \cr
+3 &amp;amp; 8 \cr
+2 &amp;amp; 4
+\end{bmatrix}.
+$$&lt;/li&gt;
+&lt;li&gt;簡約な行列の主成分のある行を抜き出した行列を$R$とする：
+$$         R =
+\begin{bmatrix}
+1 &amp;amp; 2 &amp;amp; 0 &amp;amp; 0\cr
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 3
+\end{bmatrix}.
+$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;行列積$CR$を計算すれば，
+$$
+CR =
+\begin{bmatrix}
+1 &amp;amp; 2 \cr
+3 &amp;amp; 8 \cr
+2 &amp;amp; 4
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp;amp; 2 &amp;amp; 0 &amp;amp; 0\cr
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 3
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 &amp;amp; 2 &amp;amp; 2 &amp;amp; 6\cr
+3 &amp;amp; 6 &amp;amp; 8 &amp;amp; 24 \cr
+2 &amp;amp; 4 &amp;amp; 4 &amp;amp; 12
+\end{bmatrix}
+= A
+$$
+となっており，たしかに$A=CR$と分解できていることがわかる．
+これは偶然ではなく，一般に，行列$A$に対して，上記のように定めた$C$と$R$により$A=CR$と分解することができる．&lt;/p&gt;
+&lt;p&gt;このように分解できることは，比較的容易に納得できる．
+行列に左から適切な正則行列を掛けることで簡約な行列が得られることに注意すると，
+この例の場合，ある$3\times 3$型の正則行列$P$（行基本変形に対応する行列の積）が存在し，
+$$
+PA=
+\begin{bmatrix}
+1 &amp;amp; 2 &amp;amp; 0 &amp;amp; 0 \cr
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 3 \cr
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0
+\end{bmatrix}
+$$
+と書ける．
+行列$P$は正則なので，
+$$
+A = P^{-1}
+\begin{bmatrix}
+1 &amp;amp; 2 &amp;amp; 0 &amp;amp; 0 \cr
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 3 \cr
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0
+\end{bmatrix}
+$$
+だが，簡約な行列の3行目は零（行）ベクトルであるから，$P^{-1}$の3列目も右辺の行列積には寄与しない．
+そこで，$P^{-1}$の3列目を省いた$3\times 2$型行列を$C = [\mathbf{c}_1,\mathbf{c}_2]$
+と表すことにすれば，
+$$
+A = [\mathbf{c}_1,\mathbf{c}_2]
+\begin{bmatrix}
+1 &amp;amp; 2 &amp;amp; 0 &amp;amp; 0 \cr
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 3 \cr
+\end{bmatrix}
+$$
+となるはずである．
+ここで，右辺の第1列と第3列はそれぞれ$\mathbf{c}_1$と$\mathbf{c}_2$だが，
+左辺と比べれば，これらはそれぞれ$A$の1列目と3列目に一致するはずである．&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>エクストリーム・サウナ</title>
