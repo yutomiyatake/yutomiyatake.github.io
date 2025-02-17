@@ -5,12 +5,40 @@
     <link>https://example.com/post/</link>
       <atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 29 Nov 2024 13:14:04 +0900</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 17 Feb 2025 09:55:44 +0900</lastBuildDate>
     <image>
       <url>https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
       <link>https://example.com/post/</link>
     </image>
+    
+    <item>
+      <title>Rejected Tekeoff</title>
+      <link>https://example.com/post/rejected_tekeoff/</link>
+      <pubDate>Mon, 17 Feb 2025 09:55:44 +0900</pubDate>
+      <guid>https://example.com/post/rejected_tekeoff/</guid>
+      <description>&lt;p&gt;初めてのアメリカ出張で，珍しい経験をした．&lt;/p&gt;
+&lt;p&gt;サンフランシスコでアメリカ国内線に乗り換え．
+国際線は予定より早く到着し，乗り継ぎ時間は約4時間あった．
+しかし，ユナイテッド便が90分遅延し，ようやく搭乗して離陸開始．
+&amp;hellip;と思ったら、（どの程度の速度が出ていたのかは分からないが）急ブレーキ．
+先月は海外で飛行機事故が相次いでいたこともあり，10秒ほど不安な時間を過ごす．
+アナウンスはなく，状況も不明．
+欠航になるのか，別の便に振り替えられるのかも分からない．
+夜間ということもあり，機体がどこへ向かってタクシングしているのかも分からない．&lt;/p&gt;
+&lt;p&gt;しばらくして，駐機場ではない場所で停止．
+ここでようやくパイロットからアナウンス．「The takeoff was rejected because of &amp;hellip;」
+仕事柄，「リジェクト（reject）」という単語はよく使うが（使いたくはない），離陸についても使われることを初めて知った．
+こういう用例は，一生忘れないだろう．
+理由は，どうやら前方のドアに問題があったらしい．
+機材はB737で，1時間ちょっとのフライトにもかかわらず（たまたま？）パイロットが3人いた．
+そのうち1人がコクピットから出てきて，問題（？）のドアを内側から10秒ほど確認し，「OKOK」と言ってコクピットに戻る．
+外からの確認は特になく，本当に大丈夫なのか&amp;hellip;と思っていたら，再び離陸．今度は無事成功．
+その後のフライトは順調で，目的地のサンディエゴ付近で少し旋回したものの，（結局かなりの遅延の末に）無事到着．&lt;/p&gt;
+&lt;p&gt;ちなみに，帰国時のサンディエゴ→サンフランシスコ便もやはり遅延．
+しかしフライト自体は順調だった．
+ただ，前方のCAさん，着席中ずっと手をたたきながら歌を歌っており，なかなかユニークな人だった．&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>CR分解</title>
