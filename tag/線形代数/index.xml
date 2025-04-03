@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>線形代数 | Yuto Miyatake</title>
-    <link>https://example.com/tag/%E7%B7%9A%E5%BD%A2%E4%BB%A3%E6%95%B0/</link>
-      <atom:link href="https://example.com/tag/%E7%B7%9A%E5%BD%A2%E4%BB%A3%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/tag/%E7%B7%9A%E5%BD%A2%E4%BB%A3%E6%95%B0/</link>
+      <atom:link href="http://localhost:1313/tag/%E7%B7%9A%E5%BD%A2%E4%BB%A3%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
     <description>線形代数</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 29 Nov 2024 13:14:04 +0900</lastBuildDate>
     <image>
-      <url>https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
+      <url>http://localhost:1313/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
       <title>線形代数</title>
-      <link>https://example.com/tag/%E7%B7%9A%E5%BD%A2%E4%BB%A3%E6%95%B0/</link>
+      <link>http://localhost:1313/tag/%E7%B7%9A%E5%BD%A2%E4%BB%A3%E6%95%B0/</link>
     </image>
     
     <item>
       <title>CR分解</title>
-      <link>https://example.com/post/cr/</link>
+      <link>http://localhost:1313/post/cr/</link>
       <pubDate>Fri, 29 Nov 2024 13:14:04 +0900</pubDate>
-      <guid>https://example.com/post/cr/</guid>
+      <guid>http://localhost:1313/post/cr/</guid>
       <description>&lt;p&gt;最近，行列のCR分解が気に入っている．
 CR分解とは，行列の簡約化を利用して，その行列を二つの行列の積に分解するものである．&lt;/p&gt;
 &lt;p&gt;次の行列を考える：

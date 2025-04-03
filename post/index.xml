@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts | Yuto Miyatake</title>
-    <link>https://example.com/post/</link>
-      <atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/post/</link>
+      <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 17 Feb 2025 09:55:44 +0900</lastBuildDate>
     <image>
-      <url>https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
+      <url>http://localhost:1313/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
-      <link>https://example.com/post/</link>
+      <link>http://localhost:1313/post/</link>
     </image>
     
     <item>
       <title>Rejected Tekeoff</title>
-      <link>https://example.com/post/rejected_tekeoff/</link>
+      <link>http://localhost:1313/post/rejected_tekeoff/</link>
       <pubDate>Mon, 17 Feb 2025 09:55:44 +0900</pubDate>
-      <guid>https://example.com/post/rejected_tekeoff/</guid>
+      <guid>http://localhost:1313/post/rejected_tekeoff/</guid>
       <description>&lt;p&gt;初めてのアメリカ出張で，珍しい経験をした．&lt;/p&gt;
 &lt;p&gt;サンフランシスコでアメリカ国内線に乗り換え．
 国際線は予定より早く到着し，乗り継ぎ時間は約4時間あった．
@@ -42,9 +42,9 @@
     
     <item>
       <title>CR分解</title>
-      <link>https://example.com/post/cr/</link>
+      <link>http://localhost:1313/post/cr/</link>
       <pubDate>Fri, 29 Nov 2024 13:14:04 +0900</pubDate>
-      <guid>https://example.com/post/cr/</guid>
+      <guid>http://localhost:1313/post/cr/</guid>
       <description>&lt;p&gt;最近，行列のCR分解が気に入っている．
 CR分解とは，行列の簡約化を利用して，その行列を二つの行列の積に分解するものである．&lt;/p&gt;
 &lt;p&gt;次の行列を考える：
@@ -140,9 +140,9 @@ $$
     
     <item>
       <title>エクストリーム・サウナ</title>
-      <link>https://example.com/post/extreme_sauna/</link>
+      <link>http://localhost:1313/post/extreme_sauna/</link>
       <pubDate>Wed, 13 Nov 2024 22:52:00 +0900</pubDate>
-      <guid>https://example.com/post/extreme_sauna/</guid>
+      <guid>http://localhost:1313/post/extreme_sauna/</guid>
       <description>&lt;p&gt;8月にフィンランドでエクストリーム・サウナを体験しました．&lt;/p&gt;
 &lt;p&gt;滞在中にラッペーンランタで1回，ヘルシンキ近郊で1回サウナを体験しましたが，ここでは，特に印象的だったラッペーンランタでの体験を振り返ります．&lt;/p&gt;
 &lt;p&gt;ラッペーンランタ大学に滞在中，サウナクラブ（？）の方（数学者）が主催のサウナイベントに誘っていただきました．
@@ -185,9 +185,9 @@ $$
     
     <item>
       <title>北京出張の備忘録</title>
-      <link>https://example.com/post/beijing2024/</link>
+      <link>http://localhost:1313/post/beijing2024/</link>
       <pubDate>Fri, 08 Nov 2024 09:44:45 +0900</pubDate>
-      <guid>https://example.com/post/beijing2024/</guid>
+      <guid>http://localhost:1313/post/beijing2024/</guid>
       <description>&lt;p&gt;2019年以来5年ぶりの北京出張．手続きや現地の様子など以前と大きく変わっていたこともあったので，その備忘録です．&lt;/p&gt;
 &lt;h3 id=&#34;ビザ&#34;&gt;ビザ&lt;/h3&gt;
 &lt;p&gt;中国に渡航するには，ビザを申請する必要があります．大阪の場合，心斎橋の少し北にある中国ビザ申請センターに，申請時と受取時の2回行くことになります．
@@ -239,9 +239,9 @@ $$
     
     <item>
       <title>関数の定義：キーワード引数</title>
-      <link>https://example.com/post/julia_kwargs/</link>
+      <link>http://localhost:1313/post/julia_kwargs/</link>
       <pubDate>Thu, 03 Feb 2022 17:18:22 +0900</pubDate>
-      <guid>https://example.com/post/julia_kwargs/</guid>
+      <guid>http://localhost:1313/post/julia_kwargs/</guid>
       <description>&lt;p&gt;関数を定義する際，キーワード引数を利用すると便利なことがあります．例えば反復法の終了条件として閾値（例えば最大反復回数や許容誤差）を設定することはよくありますが，デフォルトの値を設定しつつも，関数を呼び出すときに自由に変更できると便利です．キーワード引数は，引数の指定を位置ではなく名前でおこないます．以下，Jiliaにおけるキーワード引数の基本的な使い方を説明します．&lt;/p&gt;
 &lt;p&gt;例えば，次の関数では &lt;code&gt;y&lt;/code&gt; の値としてデフォルトで &lt;code&gt;1&lt;/code&gt; が設定されていますが，関数を呼び出すときに，自由に変更することが可能です．&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-julia&#34; data-lang=&#34;julia&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;julia&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -285,9 +285,9 @@ $$
     
     <item>
       <title>Juliaの行列ベクトル積について（疎行列編）</title>
-      <link>https://example.com/post/julia_mat_vec/</link>
+      <link>http://localhost:1313/post/julia_mat_vec/</link>
       <pubDate>Wed, 02 Feb 2022 09:13:33 +0900</pubDate>
-      <guid>https://example.com/post/julia_mat_vec/</guid>
+      <guid>http://localhost:1313/post/julia_mat_vec/</guid>
       <description>&lt;p&gt;科学技術計算では行列ベクトル積が頻繁に登場し，これを効率よく計算することはとても重要です．
 行列サイズ $n$ に対して計算量は $\mathrm{O}(n^2)$ ですが，行列は疎行列（ほとんどの要素が $0$）であることが多く，定義通りに計算すると $0$ を掛けたり足したりする無駄な演算が多く発生してしまいます．
 以下では疎行列とベクトルの積の計算について解説します．
@@ -400,9 +400,9 @@ $$
     
     <item>
       <title>Matlabで描く図の背景の透明化</title>
-      <link>https://example.com/post/matlab-transparency/</link>
+      <link>http://localhost:1313/post/matlab-transparency/</link>
       <pubDate>Tue, 01 Feb 2022 23:04:32 +0900</pubDate>
-      <guid>https://example.com/post/matlab-transparency/</guid>
+      <guid>http://localhost:1313/post/matlab-transparency/</guid>
       <description>&lt;p&gt;Matlabで図を描いたとき，通常，図の背景は白です．論文を書くときなどはこれで困らないのですが，スライドに貼り付けると，背景が「真っ白」ではない場合，少し微妙な出来栄えになってしまいます．&lt;/p&gt;
 &lt;p&gt;そんなとき，背景が透明な図を描ければよいのですが，matlabの場合は次のように実現可能です．&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-matlab&#34; data-lang=&#34;matlab&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gcf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;Color&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#39;none&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;% figureの背景を透明に設定&lt;/span&gt;
@@ -414,9 +414,9 @@ $$
     
     <item>
       <title>PDFの余白を小さくする</title>
-      <link>https://example.com/post/pdfcrop/</link>
+      <link>http://localhost:1313/post/pdfcrop/</link>
       <pubDate>Tue, 01 Feb 2022 10:53:04 +0900</pubDate>
-      <guid>https://example.com/post/pdfcrop/</guid>
+      <guid>http://localhost:1313/post/pdfcrop/</guid>
       <description>&lt;p&gt;Matlabなどで図を描き，PDFで保存すると，想定外に余白が大きすぎることがあり，TeXで貼り付けるときに少々困ります．そんなときは，ターミナルから&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pdfcrop test.pdf
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とすれば余白は最小化されます．なお，TeXをTeX Liveでインストールしていればpdfcropは標準でインストールされているはずです．&lt;/p&gt;
@@ -428,9 +428,9 @@ $$
     
     <item>
       <title>JuliaでLU分解するときの注意点</title>
-      <link>https://example.com/post/lu-julia/</link>
+      <link>http://localhost:1313/post/lu-julia/</link>
       <pubDate>Mon, 03 Jan 2022 16:28:58 +0900</pubDate>
-      <guid>https://example.com/post/lu-julia/</guid>
+      <guid>http://localhost:1313/post/lu-julia/</guid>
       <description>&lt;p&gt;JuliaでLU分解を利用して連立一次方程式を数値計算するとき，枢軸選択 (pivoting) に注意する必要があります．みるべき情報は&lt;a href=&#34;https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/#LinearAlgebra.lu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ここ&lt;/a&gt;ですが，備忘録も兼ねてまとめておきます．&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-julia&#34; data-lang=&#34;julia&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;julia&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LinearAlgebra&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -560,9 +560,9 @@ $$
     
     <item>
       <title>ウェブページをリニューアルしました</title>
-      <link>https://example.com/post/initial/</link>
+      <link>http://localhost:1313/post/initial/</link>
       <pubDate>Mon, 03 Jan 2022 16:18:13 +0900</pubDate>
-      <guid>https://example.com/post/initial/</guid>
+      <guid>http://localhost:1313/post/initial/</guid>
       <description>&lt;p&gt;2019年頃から個人のウェブページをMkDocsで作ってきましたが，Hugoを使ってリニューアルしました．MkDocsも十分使い勝手がよく，おそらくこれからも講義用のページはMkDocsで構成していく予定ですが，備忘録（メモ）をブログ形式で残したいと思い（日付を残したいのと，タグ付け機能を使いたいのが主な動機です），HugoのAcademicテーマを利用することにしました．&lt;/p&gt;
 </description>
     </item>
