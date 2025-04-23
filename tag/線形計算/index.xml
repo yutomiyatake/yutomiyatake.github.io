@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>線形計算 | Yuto Miyatake</title>
-    <link>https://example.com/tag/%E7%B7%9A%E5%BD%A2%E8%A8%88%E7%AE%97/</link>
-      <atom:link href="https://example.com/tag/%E7%B7%9A%E5%BD%A2%E8%A8%88%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/tag/%E7%B7%9A%E5%BD%A2%E8%A8%88%E7%AE%97/</link>
+      <atom:link href="http://localhost:1313/tag/%E7%B7%9A%E5%BD%A2%E8%A8%88%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
     <description>線形計算</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 03 Jan 2022 16:28:58 +0900</lastBuildDate>
     <image>
-      <url>https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
+      <url>http://localhost:1313/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
       <title>線形計算</title>
-      <link>https://example.com/tag/%E7%B7%9A%E5%BD%A2%E8%A8%88%E7%AE%97/</link>
+      <link>http://localhost:1313/tag/%E7%B7%9A%E5%BD%A2%E8%A8%88%E7%AE%97/</link>
     </image>
     
     <item>
       <title>JuliaでLU分解するときの注意点</title>
-      <link>https://example.com/post/lu-julia/</link>
+      <link>http://localhost:1313/post/lu-julia/</link>
       <pubDate>Mon, 03 Jan 2022 16:28:58 +0900</pubDate>
-      <guid>https://example.com/post/lu-julia/</guid>
+      <guid>http://localhost:1313/post/lu-julia/</guid>
       <description>&lt;p&gt;JuliaでLU分解を利用して連立一次方程式を数値計算するとき，枢軸選択 (pivoting) に注意する必要があります．みるべき情報は&lt;a href=&#34;https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/#LinearAlgebra.lu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ここ&lt;/a&gt;ですが，備忘録も兼ねてまとめておきます．&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-julia&#34; data-lang=&#34;julia&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;julia&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LinearAlgebra&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;

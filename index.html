@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: April 19, 2025 --><html lang="en-us" >
+<!-- Last Published: April 23, 2025 --><html lang="en-us" >
 
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -73,7 +73,7 @@
 
   
 
-  <link rel="stylesheet" href="/css/vendor-bundle.min.26c458e6907dc03073573976b7f4044e.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/css/vendor-bundle.min.css" media="print" onload="this.media='all'">
 
   
   
@@ -225,7 +225,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.f6689966c0a10712f95f034011917db0.css" />
+  <link rel="stylesheet" href="/css/wowchemy.css" />
 
   
   
@@ -249,45 +249,6 @@
 
 
 
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119329001-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-      dataLayer.push(arguments);
-  }
-
-  function trackOutboundLink(url, target) {
-    gtag('event', 'click', {
-         'event_category': 'outbound',
-         'event_label': url,
-         'transport_type': 'beacon',
-         'event_callback': function () {
-           if (target !== '_blank') {
-             document.location = url;
-           }
-         }
-    });
-    console.debug("Outbound link clicked: " + url);
-  }
-
-  function onClickCallback(event) {
-    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
-      return;
-    }
-    trackOutboundLink(event.target, event.target.getAttribute('target'));  
-  }
-
-  gtag('js', new Date());
-  gtag('config', 'UA-119329001-1', {});
-  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
-
-  
-  document.addEventListener('click', onClickCallback, false);
-</script>
 
 
 
@@ -333,8 +294,8 @@
 
 
 
-<link rel="alternate" hreflang="en-us" href="https://example.com/" />
-<link rel="canonical" href="https://example.com/" />
+<link rel="alternate" hreflang="en-us" href="http://localhost:1313/" />
+<link rel="canonical" href="http://localhost:1313/" />
 
 
 
@@ -368,7 +329,7 @@
 
   <meta property="twitter:site" content="@GetResearchDev" />
   <meta property="twitter:creator" content="@GetResearchDev" />
-<meta property="twitter:image" content="https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" />
+<meta property="twitter:image" content="http://localhost:1313/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" />
 
 
 
@@ -380,9 +341,9 @@
 
 <meta property="og:type" content="profile" />
 <meta property="og:site_name" content="Yuto Miyatake" />
-<meta property="og:url" content="https://example.com/" />
+<meta property="og:url" content="http://localhost:1313/" />
 <meta property="og:title" content="Yuto Miyatake" />
-<meta property="og:description" content="Associate Professor" /><meta property="og:image" content="https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content="Associate Professor" /><meta property="og:image" content="http://localhost:1313/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta property="og:updated_time" content="2022-10-24T00:00:00&#43;00:00" />
@@ -398,10 +359,10 @@
   "@type": "WebSite",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://example.com/?q={search_term_string}",
+    "target": "http://localhost:1313/?q={search_term_string}",
     "query-input": "required name=search_term_string"
   },
-  "url": "https://example.com/"
+  "url": "http://localhost:1313/"
 }
 </script>
 
@@ -455,7 +416,7 @@
   
   
   
-  <script src="/js/wowchemy-init.min.9e4214442a7711d35691acd58f6f6361.js"></script>
+  <script src="/js/wowchemy-init.min.js"></script>
 
   
 
@@ -1092,12 +1053,9 @@
 <h3 id="連絡先">連絡先</h3>
 <p>〒560-0043 大阪府豊中市待兼山町1-32 大阪大学 D3センター 601号室</p>
 <!-- 
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/vcDLffdrxsU?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
-    </div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/vcDLffdrxsU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
  -->
 <h4 id="ヨビノリたくみ-さんと対談させていただきました">ヨビノリたくみ さんと対談させていただきました！</h4>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -1693,7 +1651,7 @@ CR分解とは，行列の簡約化を利用して，その行列を二つの行
   
 
 
-<script src="/js/vendor-bundle.min.36925ff7588fbf71ae347b80bbb6669b.js"></script>
+<script src="/js/vendor-bundle.min.js"></script>
 
 
 
@@ -1787,11 +1745,11 @@ CR分解とは，行列の簡約化を利用して，その行列を二つの行
   
 
 
-<script src="/en/js/wowchemy.min.82f8dceb21fd87c6f7d2fbaedd526c57.js"></script>
+<script src="/en/js/wowchemy.min.js"></script>
 
 
 
-  <script src="/js/wowchemy-map.a26e9d2f7238ba5b868384f1c5bc6477.js" type="module"></script>
+  <script src="/js/wowchemy-map.js" type="module"></script>
 
 
 
@@ -1824,7 +1782,7 @@ CR分解とは，行列の簡約化を利用して，その行列を二つの行
 </div>
 
 
-  <script src="/js/wowchemy-publication.9c0e895144aef5a693008b5c5d450147.js" type="module"></script>
+  <script src="/js/wowchemy-publication.js" type="module"></script>
 
 
 

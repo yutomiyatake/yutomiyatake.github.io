@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Julia | Yuto Miyatake</title>
-    <link>https://example.com/tag/julia/</link>
-      <atom:link href="https://example.com/tag/julia/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/tag/julia/</link>
+      <atom:link href="http://localhost:1313/tag/julia/index.xml" rel="self" type="application/rss+xml" />
     <description>Julia</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 03 Feb 2022 17:18:22 +0900</lastBuildDate>
     <image>
-      <url>https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
+      <url>http://localhost:1313/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
       <title>Julia</title>
-      <link>https://example.com/tag/julia/</link>
+      <link>http://localhost:1313/tag/julia/</link>
     </image>
     
     <item>
       <title>関数の定義：キーワード引数</title>
-      <link>https://example.com/post/julia_kwargs/</link>
+      <link>http://localhost:1313/post/julia_kwargs/</link>
       <pubDate>Thu, 03 Feb 2022 17:18:22 +0900</pubDate>
-      <guid>https://example.com/post/julia_kwargs/</guid>
+      <guid>http://localhost:1313/post/julia_kwargs/</guid>
       <description>&lt;p&gt;関数を定義する際，キーワード引数を利用すると便利なことがあります．例えば反復法の終了条件として閾値（例えば最大反復回数や許容誤差）を設定することはよくありますが，デフォルトの値を設定しつつも，関数を呼び出すときに自由に変更できると便利です．キーワード引数は，引数の指定を位置ではなく名前でおこないます．以下，Jiliaにおけるキーワード引数の基本的な使い方を説明します．&lt;/p&gt;
 &lt;p&gt;例えば，次の関数では &lt;code&gt;y&lt;/code&gt; の値としてデフォルトで &lt;code&gt;1&lt;/code&gt; が設定されていますが，関数を呼び出すときに，自由に変更することが可能です．&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-julia&#34; data-lang=&#34;julia&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;julia&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -60,9 +60,9 @@
     
     <item>
       <title>Juliaの行列ベクトル積について（疎行列編）</title>
-      <link>https://example.com/post/julia_mat_vec/</link>
+      <link>http://localhost:1313/post/julia_mat_vec/</link>
       <pubDate>Wed, 02 Feb 2022 09:13:33 +0900</pubDate>
-      <guid>https://example.com/post/julia_mat_vec/</guid>
+      <guid>http://localhost:1313/post/julia_mat_vec/</guid>
       <description>&lt;p&gt;科学技術計算では行列ベクトル積が頻繁に登場し，これを効率よく計算することはとても重要です．
 行列サイズ $n$ に対して計算量は $\mathrm{O}(n^2)$ ですが，行列は疎行列（ほとんどの要素が $0$）であることが多く，定義通りに計算すると $0$ を掛けたり足したりする無駄な演算が多く発生してしまいます．
 以下では疎行列とベクトルの積の計算について解説します．
@@ -175,9 +175,9 @@
     
     <item>
       <title>JuliaでLU分解するときの注意点</title>
-      <link>https://example.com/post/lu-julia/</link>
+      <link>http://localhost:1313/post/lu-julia/</link>
       <pubDate>Mon, 03 Jan 2022 16:28:58 +0900</pubDate>
-      <guid>https://example.com/post/lu-julia/</guid>
+      <guid>http://localhost:1313/post/lu-julia/</guid>
       <description>&lt;p&gt;JuliaでLU分解を利用して連立一次方程式を数値計算するとき，枢軸選択 (pivoting) に注意する必要があります．みるべき情報は&lt;a href=&#34;https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/#LinearAlgebra.lu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ここ&lt;/a&gt;ですが，備忘録も兼ねてまとめておきます．&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-julia&#34; data-lang=&#34;julia&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;julia&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LinearAlgebra&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
