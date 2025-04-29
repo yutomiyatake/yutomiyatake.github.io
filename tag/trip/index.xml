@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Trip | Yuto Miyatake</title>
-    <link>http://localhost:1313/tag/trip/</link>
-      <atom:link href="http://localhost:1313/tag/trip/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://example.com/tag/trip/</link>
+      <atom:link href="https://example.com/tag/trip/index.xml" rel="self" type="application/rss+xml" />
     <description>Trip</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 17 Feb 2025 09:55:44 +0900</lastBuildDate>
     <image>
-      <url>http://localhost:1313/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
+      <url>https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
       <title>Trip</title>
-      <link>http://localhost:1313/tag/trip/</link>
+      <link>https://example.com/tag/trip/</link>
     </image>
     
     <item>
       <title>Rejected Tekeoff</title>
-      <link>http://localhost:1313/post/rejected_tekeoff/</link>
+      <link>https://example.com/post/rejected_tekeoff/</link>
       <pubDate>Mon, 17 Feb 2025 09:55:44 +0900</pubDate>
-      <guid>http://localhost:1313/post/rejected_tekeoff/</guid>
+      <guid>https://example.com/post/rejected_tekeoff/</guid>
       <description>&lt;p&gt;初めてのアメリカ出張で，珍しい経験をした．&lt;/p&gt;
 &lt;p&gt;サンフランシスコでアメリカ国内線に乗り換え．
 国際線は予定より早く到着し，乗り継ぎ時間は約4時間あった．
@@ -42,9 +42,9 @@
     
     <item>
       <title>エクストリーム・サウナ</title>
-      <link>http://localhost:1313/post/extreme_sauna/</link>
+      <link>https://example.com/post/extreme_sauna/</link>
       <pubDate>Wed, 13 Nov 2024 22:52:00 +0900</pubDate>
-      <guid>http://localhost:1313/post/extreme_sauna/</guid>
+      <guid>https://example.com/post/extreme_sauna/</guid>
       <description>&lt;p&gt;8月にフィンランドでエクストリーム・サウナを体験しました．&lt;/p&gt;
 &lt;p&gt;滞在中にラッペーンランタで1回，ヘルシンキ近郊で1回サウナを体験しましたが，ここでは，特に印象的だったラッペーンランタでの体験を振り返ります．&lt;/p&gt;
 &lt;p&gt;ラッペーンランタ大学に滞在中，サウナクラブ（？）の方（数学者）が主催のサウナイベントに誘っていただきました．
@@ -87,9 +87,9 @@
     
     <item>
       <title>北京出張の備忘録</title>
-      <link>http://localhost:1313/post/beijing2024/</link>
+      <link>https://example.com/post/beijing2024/</link>
       <pubDate>Fri, 08 Nov 2024 09:44:45 +0900</pubDate>
-      <guid>http://localhost:1313/post/beijing2024/</guid>
+      <guid>https://example.com/post/beijing2024/</guid>
       <description>&lt;p&gt;2019年以来5年ぶりの北京出張．手続きや現地の様子など以前と大きく変わっていたこともあったので，その備忘録です．&lt;/p&gt;
 &lt;h3 id=&#34;ビザ&#34;&gt;ビザ&lt;/h3&gt;
 &lt;p&gt;中国に渡航するには，ビザを申請する必要があります．大阪の場合，心斎橋の少し北にある中国ビザ申請センターに，申請時と受取時の2回行くことになります．
