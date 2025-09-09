@@ -5,12 +5,49 @@
     <link>https://example.com/post/</link>
       <atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 09 Sep 2025 09:01:15 +0900</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 09 Sep 2025 09:27:17 +0900</lastBuildDate>
     <image>
       <url>https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
       <link>https://example.com/post/</link>
     </image>
+    
+    <item>
+      <title>時差ボケ</title>
+      <link>https://example.com/post/antibes2025/</link>
+      <pubDate>Tue, 09 Sep 2025 09:27:17 +0900</pubDate>
+      <guid>https://example.com/post/antibes2025/</guid>
+      <description>&lt;p&gt;6月のレンヌへの出張では，時差ボケ対策として&lt;a href=&#34;https://www.timeshifter.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Timeshifter&lt;/a&gt;というアプリを使ってみた．帰国時の時差ボケは辛かったけれど，非常に分かりやすいアプリだったので，8月末のニースへの出張でも使おうと思っていた．&lt;/p&gt;
+&lt;p&gt;しかし，実際に使おうとすると，2回目からは（？）有料とのこと．
+そこで，アプリを使わずに出張したのだが，行きも帰りも時差ボケに悩まされることがほぼなかったので，実際のスケジュールをメモしておこうと思う．&lt;/p&gt;
+&lt;h3 id=&#34;往路&#34;&gt;往路：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;出発当日，朝8時過ぎに起床&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NH036 伊丹18:00 → 羽田 19:15&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NH205 羽田 22:45 → ウィーン 06:20&lt;/strong&gt; &lt;br&gt; 日本時間の午前3時頃から，６時間くらい浅い眠りを繰り返す&lt;/li&gt;
+&lt;li&gt;乗継時間が長かったので，ウィーンの街を2時間ほど散策&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OS425 ウィーン 12:25 → ニース 14:10&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;ホテルにチェックイン後，夕方以降は，睡魔との戦いだったが，レストランで夕飯を食べ，11時頃に就寝&lt;/li&gt;
+&lt;li&gt;一度目が覚めるも，その後すぐに寝ることができ，6時頃に起床&lt;/li&gt;
+&lt;li&gt;以降，時差ボケを感じることは全くなかった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;復路&#34;&gt;復路&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;前日の夜は11時頃に就寝，当日の朝は4時頃に起床&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LH2271 ニース 8:45 → MUC 10:10&lt;/strong&gt; &lt;br&gt;この1時間のフライトは全力で寝るつもりだったが，airBalticの機内ではStarlinkのwifiが使え，とても快適でYouTubeを見てしまい，仮眠に失敗&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NH218 ミュンヘン 11:15 → 羽田 6:55&lt;/strong&gt; &lt;br&gt;現地時間の15時半から5時間弱の睡眠（日本時間の3時くらいに起床）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NH017 羽田 9:00 → 伊丹 10:05&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;帰宅後，14時-17時くらいまで昼寝（爆睡）&lt;/li&gt;
+&lt;li&gt;11時頃に就寝&lt;/li&gt;
+&lt;li&gt;翌朝6時頃に起床（以降，よく寝れる日やあまり寝れない日が続くものの，日中ひどい時差ボケを感じることはなかった）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ウィーン&#34;&gt;ウィーン&lt;/h3&gt;
+&lt;p&gt;ニース（というかアンティーブ）への出張は3回目だったが，ウィーンは初．
+ウィーン・ミッテ駅からすぐ近くの市立公園にはリスがいて，その後，カフェ ザッハーで朝食にザッハトルテ（早朝だったからか待ち時間は0分）．
+ただ，気温11℃は寒かった．
+&lt;video src=&#34;vienna2.mp4&#34; alt=&#34;&#34; width=50% autoplay loop muted playsinline&gt;&lt;/video&gt;
+&lt;img src=&#34;vienna1.jpg&#34; alt=&#34;&#34; width=60%&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>レンヌで地下鉄に閉じ込められた</title>
