@@ -5,12 +5,28 @@
     <link>https://example.com/post/</link>
       <atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 17 Feb 2025 09:55:44 +0900</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 09 Sep 2025 09:01:15 +0900</lastBuildDate>
     <image>
       <url>https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
       <link>https://example.com/post/</link>
     </image>
+    
+    <item>
+      <title>レンヌで地下鉄に閉じ込められた</title>
+      <link>https://example.com/post/rennes/</link>
+      <pubDate>Tue, 09 Sep 2025 09:01:15 +0900</pubDate>
+      <guid>https://example.com/post/rennes/</guid>
+      <description>&lt;p&gt;６月に出張で訪れたレンヌ、街の中心にあるエアビーに泊まり、少し離れたところにあるINRIAまで、朝は徒歩（５０分）、帰りは地下鉄（４０分）で移動していた。&lt;/p&gt;
+&lt;p&gt;が、最終日の帰り、地下鉄に乗っていると、駅と駅の間で急停車。車内の電気も消える。なかなか不安。ちょっとしたトラブルなのか、どこかで事件があったのか、はたまたストなのか（ストの場合、いくらなんでも駅までは運行してくれると思うものの、昔、アテネでバスに乗っていて、突然ストが始まって、バス停でも何でもないところで降ろされたことがある）。とはいえ、ほとんどの乗客はいたって冷静なので、よくあることなのだろうか。&lt;/p&gt;
+&lt;p&gt;しばらくして電気は復旧。鉄道会社の職員らしき人が乗り込んできて、機械をガチャガチャやっている。そのうち、音声アナウンスや車内の案内表示もはじまったのだが、「フランス語のみ！」&lt;/p&gt;
+&lt;p&gt;ここで役立ったのはGoogle翻訳の音声入力。ずっと待機しておくわけにはいかないので、たまに音声案内が流れたら音声入力をオンにする。アナウンスに間があると、そこで入力終了となって翻訳されてしまったりして、大事そうなところが翻訳されなかったりするけれど、何もないよりははるかに安心である。「全力を尽くしてくれている」こともわかる。&lt;/p&gt;
+&lt;p&gt;さて、どうやら運転再開予定時間がアナウンスされ、表示もされている。しかし、日本でも早まったり遅れたりするし、ここはフランスである。どうなるか全く読めない。再開予定まで40分くらいのタイミングで、最寄りの駅までは移動してくれたので、降車してUberを使うかどうか悩む。しかし悩んでいる間に恐ろしくUberの金額が高くなったので諦める。仕方ないので、車内でのんびり待つことに。&lt;/p&gt;
+&lt;p&gt;緊急停車から1時間と少し、ようやく無事に運転再開。運転再開まで60分と言われてから、ちょうど60分（1〜2分の誤差はあったかもしれないが）。
+ここである疑問：実は10〜20分くらいで復旧していたけど、60分運行しないとアナウンスしちゃったから、復旧後も待っていただけでは？　真相はいかに。&lt;/p&gt;
+&lt;img src=&#34;rennes0.jpg&#34; alt=&#34;&#34; width=60%&gt;
+&lt;img src=&#34;rennes1.png&#34; alt=&#34;&#34; width=60%&gt;</description>
+    </item>
     
     <item>
       <title>Rejected Tekeoff</title>

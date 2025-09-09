@@ -11,18 +11,22 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://example.com/post/</loc>
-    <lastmod>2025-02-17T09:55:44+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://example.com/post/rejected_tekeoff/</loc>
-    <lastmod>2025-02-17T09:55:44+09:00</lastmod>
+    <lastmod>2025-09-09T09:01:15+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://example.com/tags/</loc>
-    <lastmod>2025-02-17T09:55:44+09:00</lastmod>
+    <lastmod>2025-09-09T09:01:15+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://example.com/tag/trip/</loc>
+    <lastmod>2025-09-09T09:01:15+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://example.com/post/rennes/</loc>
+    <lastmod>2025-09-09T09:01:15+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://example.com/post/rejected_tekeoff/</loc>
     <lastmod>2025-02-17T09:55:44+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
