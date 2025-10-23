@@ -176,6 +176,9 @@
     <loc>https://example.com/lectures/2023kyoto/</loc>
     <changefreq>weekly</changefreq>
   </url><url>
+    <loc>https://example.com/lectures/2025tokyo/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://example.com/lectures/information/</loc>
     <changefreq>weekly</changefreq>
   </url><url>
