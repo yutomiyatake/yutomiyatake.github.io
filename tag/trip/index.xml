@@ -5,12 +5,50 @@
     <link>https://example.com/tag/trip/</link>
       <atom:link href="https://example.com/tag/trip/index.xml" rel="self" type="application/rss+xml" />
     <description>Trip</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 09 Sep 2025 09:27:17 +0900</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 02 Feb 2026 10:09:53 +0900</lastBuildDate>
     <image>
       <url>https://example.com/media/icon_hu5cd5cff1c9c2d87d7d2d43fb29e8a24b_14670_512x512_fill_lanczos_center_3.png</url>
       <title>Trip</title>
       <link>https://example.com/tag/trip/</link>
     </image>
+    
+    <item>
+      <title>Saarbrücken</title>
+      <link>https://example.com/post/saarland/</link>
+      <pubDate>Mon, 02 Feb 2026 10:09:53 +0900</pubDate>
+      <guid>https://example.com/post/saarland/</guid>
+      <description>&lt;p&gt;2026年1月に、約1週間、ドイツSaarland州のSaarbrückenにあるSaarland大学に滞在しました。&lt;/p&gt;
+&lt;h3 id=&#34;バスの乗り方&#34;&gt;バスの乗り方&lt;/h3&gt;
+&lt;p&gt;Saarfahrplanというスマホアプリをダウンロードし、出発地と目的地（場所でもバス停名でもよい）を入力すると、ちょうどよいバスやトラムが表示されます。
+&lt;img src=&#34;saarland_bus1.png&#34; alt=&#34;&#34; width=30%&gt;
+いくつか候補が出てくるうち，「これだ！」というのを選択すると，チケットの購入に進めます。
+必ずしも選択した時間のバス等に乗らないといけないわけではなく、チケットは一定時間（90分程度）有効です。&lt;/p&gt;
+&lt;p&gt;Saarbrücken駅からSaarland大学までは3ユーロで、Apple Pay、PayPal、クレジットカードで決済可能。しかし、私のiPhoneではApple PayとPayPalでは決済できず、毎回クレジットカードで決済しました（バスに乗るたびにクレジットカード情報を入力させられてかなり面倒でした）。&lt;/p&gt;
+&lt;p&gt;購入が完了すると、アプリ上で次のようなチケット（QRコード）が（有効期間の間）表示されます。
+&lt;img src=&#34;saarland_bus2.png&#34; alt=&#34;&#34; width=30%&gt;
+さて、バスに乗るときは、前方運転手の横のドアから乗車します。QRコードをかざす…と思いきや。運転手さんが目視で確認！ すごい能力です。&lt;/p&gt;
+&lt;p&gt;よく見れば、下の方に，「いつからいつまで」「どこからどこまで」というのが書いてあって、1週間の滞在中、たった一度だけ、1.5秒位じっと確認されたことがありました。&lt;/p&gt;
+&lt;h3 id=&#34;フェルクリンゲンの製鉄所&#34;&gt;フェルクリンゲンの製鉄所&lt;/h3&gt;
+&lt;p&gt;郊外には、世界遺産にも登録されているフェルクリンゲンの製鉄所があります。ホストの研究者に連れていっていただきましたが、鉄に興味がなくても楽しめそうな展示がいろいろあります（ちょうどX線のイベントをやっていました）。ただ、雪がつもった翌日で、真冬日の日に行ったせいか、屋外のほとんどの場所は立入禁止となっていてちょっと残念でした。
+&lt;img src=&#34;Völklingen.jpg&#34; alt=&#34;&#34; width=60%&gt;&lt;/p&gt;
+&lt;h3 id=&#34;モスバーガー&#34;&gt;モスバーガー？&lt;/h3&gt;
+&lt;p&gt;Saarbrückenには、有名ハンバーガーチェーンのロゴによく似たロゴのベーカリーがあるとのことで、気になっていました。
+実際に行ってみるとこんな感じ。&lt;/p&gt;
+&lt;img src=&#34;mischo1.jpg&#34; alt=&#34;&#34; width=60%&gt;
+&lt;p&gt;イートインスペースのロゴはもう少しおしゃれ。&lt;/p&gt;
+&lt;img src=&#34;mischo2.jpg&#34; alt=&#34;&#34; width=60%&gt;
+&lt;p&gt;ただし、Saarbrückenに&lt;a href=&#34;https://baecker-mischo.de/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bäckerei Mischo&lt;/a&gt;は2店舗あり、お洒落なのは下（南側）の店舗。&lt;/p&gt;
+&lt;img src=&#34;mischo4.png&#34; alt=&#34;&#34; width=60%&gt;
+&lt;p&gt;なお、北側の店舗は看板にロゴがあるくらいでした。&lt;/p&gt;
+&lt;img src=&#34;mischo3.jpg&#34; alt=&#34;&#34; width=60%&gt;
+&lt;h3 id=&#34;saarbrückenへの行き方&#34;&gt;Saarbrückenへの行き方&lt;/h3&gt;
+&lt;p&gt;基本的には、パリまたはフランクフルトからTGV / ICEです。
+chatGPTによると、「&lt;strong&gt;日本発ならフランクフルト経由が圧倒的に楽&lt;/strong&gt;です．」のようですが、現地の方から「&lt;strong&gt;絶対にパリ経由がおすすめ&lt;/strong&gt;」とアドバイスを受けたので、今回はパリ経由を利用しました。&lt;/p&gt;
+&lt;p&gt;CDGに到着後、電車でパリ北駅まで行き、メトロに乗り換えて一駅でパリ東駅。
+パリ東駅からTGVで約1時間50分。&lt;/p&gt;
+&lt;p&gt;しかし当日は大雪。ダイヤが乱れる中、フランクフルト行きの電車は定刻に出発したものの、結局4時間かけてSaarbrückenに到着。日本の朝5時半頃に自宅を出発し、ホテルに着いたのが23時半ごろ。長い一日でした。&lt;/p&gt;
+&lt;img src=&#34;tgv.jpg&#34; alt=&#34;&#34; width=60%&gt;</description>
+    </item>
     
     <item>
       <title>時差ボケ</title>
